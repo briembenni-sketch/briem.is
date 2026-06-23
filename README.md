@@ -1,1 +1,59 @@
 # briem.is
+
+The personal-brand website for **Benedikt Briem** — an independent web designer
+and developer in Reykjavík who builds fast, distinctive websites for companies.
+
+Live message: _“Websites that make people take your company seriously.”_
+
+## Stack
+
+A deliberately simple, dependency-free static site so it loads instantly and can
+be hosted anywhere:
+
+- `index.html` — single-page site (hero, work, services, process, about, contact)
+- `styles.css` — design system & all styling
+- `main.js` — small, vanilla interactions (menu, scroll reveal, sticky header)
+- `favicon.svg` / `og.svg` — brand mark & social share image
+
+No build step. No framework. No tracking.
+
+## Design system — “the caret”
+
+| Token | Value |
+| --- | --- |
+| Display type | Bricolage Grotesque |
+| Body type | Hanken Grotesk |
+| Mono / labels | JetBrains Mono |
+| Ink (background) | `#0B0D12` |
+| Text | `#ECEEF2` |
+| Accent (blue) | `#5B8CFF` / `#2F6BFF` |
+
+The signature element is the blinking blue **caret** `▌` that trails the `briem`
+wordmark — a code/text cursor that marks every build as hand-made. All colour
+pairings meet WCAG AA contrast, and motion respects `prefers-reduced-motion`.
+
+## Running locally
+
+It’s static — just open `index.html`, or serve the folder:
+
+```bash
+python3 -m http.server 8000
+# then visit http://localhost:8000
+```
+
+## Deploying
+
+Point any static host (Vercel, Netlify, Cloudflare Pages, GitHub Pages) at the
+repository root. No configuration required.
+
+## Editing
+
+- **Contact email** — search for `briembenni@gmail.com` to swap it (e.g. for
+  `hello@briem.is`).
+- **Work** — case studies live in the `#work` section of `index.html`.
+- **Copy is written in English** with Icelandic accents; localise in place if
+  you’d prefer a fully Icelandic site.
+
+---
+
+© Benedikt Briem · Reykjavík, Ísland

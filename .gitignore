@@ -1,0 +1,15 @@
+# Dependencies / build tooling
+node_modules/
+dist/
+.cache/
+
+# Design-time skills (installed via `npx skills add`, not part of the site)
+.agents/
+skills-lock.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
