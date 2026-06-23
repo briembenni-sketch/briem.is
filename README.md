@@ -3,7 +3,7 @@
 The personal-brand website for **Benedikt Briem** — an independent web designer
 and developer in Reykjavík who builds fast, distinctive websites for companies.
 
-Live message: _“Websites that make people take your company seriously.”_
+Live message: _“Vefsíður sem láta fólk taka fyrirtækið þitt alvarlega.”_
 
 ## Stack
 
@@ -51,8 +51,7 @@ repository root. No configuration required.
 - **Contact email** — search for `briembenni@gmail.com` to swap it (e.g. for
   `hello@briem.is`).
 - **Work** — case studies live in the `#work` section of `index.html`.
-- **Copy is written in English** with Icelandic accents; localise in place if
-  you’d prefer a fully Icelandic site.
+- **Copy is written in Icelandic (Íslenska).** The page declares `lang="is"`.
 
 ---
 

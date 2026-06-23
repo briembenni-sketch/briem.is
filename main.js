@@ -23,7 +23,7 @@
   if (toggle && mobileNav) {
     var setOpen = function (open) {
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.setAttribute("aria-label", open ? "Loka valmynd" : "Opna valmynd");
       if (open) {
         mobileNav.hidden = false;
       } else {

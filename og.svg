@@ -20,13 +20,13 @@
   <rect width="1200" height="630" fill="url(#glow)"/>
 
   <!-- mono eyebrow -->
-  <text x="80" y="150" class="m" font-size="22" fill="#5B8CFF">WEB DESIGN &amp; DEVELOPMENT — REYKJAVÍK</text>
+  <text x="80" y="150" class="m" font-size="22" fill="#5B8CFF">VEFHÖNNUN &amp; VEFFORRITUN — REYKJAVÍK</text>
 
   <!-- headline -->
-  <text class="d" font-size="92" fill="#ECEEF2" letter-spacing="-3">
-    <tspan x="78" y="288">Websites that make</tspan>
-    <tspan x="78" y="378">people take your</tspan>
-    <tspan x="78" y="468">company <tspan fill="#5B8CFF">seriously</tspan>.</tspan>
+  <text class="d" font-size="88" fill="#ECEEF2" letter-spacing="-3">
+    <tspan x="78" y="286">Vefsíður sem láta</tspan>
+    <tspan x="78" y="376">fólk taka fyrirtækið</tspan>
+    <tspan x="78" y="466">þitt <tspan fill="#5B8CFF">alvarlega</tspan>.</tspan>
   </text>
 
   <!-- wordmark bottom-left -->
@@ -34,5 +34,5 @@
   <rect x="206" y="538" width="14" height="36" rx="2" fill="#5B8CFF"/>
 
   <!-- attribution bottom-right -->
-  <text x="1120" y="568" text-anchor="end" class="b" font-size="26" fill="#9AA3B2">Benedikt Briem · since 2023</text>
+  <text x="1120" y="568" text-anchor="end" class="b" font-size="26" fill="#9AA3B2">Benedikt Briem · síðan 2023</text>
 </svg>
