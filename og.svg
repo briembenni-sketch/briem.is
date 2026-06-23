@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="briem — websites that make people take your company seriously">
+  <defs>
+    <radialGradient id="glow" cx="28%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#2F6BFF" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#2F6BFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#2F6BFF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <style>
+      .d { font-family: "Bricolage Grotesque", "Hanken Grotesk", Arial, sans-serif; font-weight: 800; }
+      .m { font-family: "JetBrains Mono", ui-monospace, monospace; letter-spacing: 4px; }
+      .b { font-family: "Hanken Grotesk", Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0B0D12"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- mono eyebrow -->
+  <text x="80" y="150" class="m" font-size="22" fill="#5B8CFF">WEB DESIGN &amp; DEVELOPMENT — REYKJAVÍK</text>
+
+  <!-- headline -->
+  <text class="d" font-size="92" fill="#ECEEF2" letter-spacing="-3">
+    <tspan x="78" y="288">Websites that make</tspan>
+    <tspan x="78" y="378">people take your</tspan>
+    <tspan x="78" y="468">company <tspan fill="#5B8CFF">seriously</tspan>.</tspan>
+  </text>
+
+  <!-- wordmark bottom-left -->
+  <text x="80" y="568" class="d" font-size="40" fill="#ECEEF2" letter-spacing="-1">briem</text>
+  <rect x="206" y="538" width="14" height="36" rx="2" fill="#5B8CFF"/>
+
+  <!-- attribution bottom-right -->
+  <text x="1120" y="568" text-anchor="end" class="b" font-size="26" fill="#9AA3B2">Benedikt Briem · since 2023</text>
+</svg>

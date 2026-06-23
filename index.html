@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.classList.add("js");</script>
+  <title>briem — Benedikt Briem · web design &amp; development, Reykjavík</title>
+  <meta name="description" content="I build fast, distinctive websites that make companies look the part. Independent web design and development from Reykjavík, Iceland — since 2023." />
+  <meta name="author" content="Benedikt Briem" />
+  <meta name="theme-color" content="#0B0D12" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="briem — websites that make people take your company seriously" />
+  <meta property="og:description" content="Independent web design &amp; development from Reykjavík. Fast, distinctive websites for companies — since 2023." />
+  <meta property="og:url" content="https://briem.is" />
+  <meta property="og:image" content="https://briem.is/og.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="briem — websites that make people take your company seriously" />
+  <meta name="twitter:description" content="Independent web design &amp; development from Reykjavík. Since 2023." />
+  <meta name="twitter:image" content="https://briem.is/og.svg" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://briem.is" />
+
+  <!-- Fonts: Bricolage Grotesque (display), Hanken Grotesk (body), JetBrains Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "briem",
+    "founder": "Benedikt Briem",
+    "description": "Independent web design and development studio in Reykjavík, building fast, distinctive websites for companies since 2023.",
+    "url": "https://briem.is",
+    "email": "briembenni@gmail.com",
+    "foundingDate": "2023",
+    "areaServed": "Worldwide",
+    "address": { "@type": "PostalAddress", "addressLocality": "Reykjavík", "addressCountry": "IS" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top" aria-label="briem — home">
+        briem<span class="caret" aria-hidden="true"></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="mailto:briembenni@gmail.com?subject=New%20website%20project">
+        Start a project
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a class="btn btn-primary" href="mailto:briembenni@gmail.com?subject=New%20website%20project">Start a project</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow reveal">
+          <span class="mono">Web design &amp; development</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="mono">Reykjavík, Ísland</span>
+        </p>
+
+        <h1 class="hero-title">
+          <span class="reveal" style="--d:1">Websites that make</span>
+          <span class="reveal" style="--d:2">people take your</span>
+          <span class="reveal" style="--d:3">company <span class="hl">seriously<span class="hl-bar" aria-hidden="true"></span></span>.</span>
+        </h1>
+
+        <p class="hero-sub reveal" style="--d:4">
+          I'm <strong>Benedikt Briem</strong> — an independent designer and developer in Reykjavík.
+          Since 2023 I've turned podcasts, brands and businesses into fast, distinctive
+          websites that earn attention and keep it.
+        </p>
+
+        <div class="hero-actions reveal" style="--d:5">
+          <a class="btn btn-primary" href="mailto:briembenni@gmail.com?subject=New%20website%20project">
+            Start a project
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#work">See the work</a>
+        </div>
+
+        <dl class="hero-meta reveal" style="--d:6">
+          <div><dt class="mono">Est.</dt><dd>2023</dd></div>
+          <div><dt class="mono">Studio</dt><dd>Independent</dd></div>
+          <div><dt class="mono">Builds</dt><dd>Hand-coded</dd></div>
+          <div><dt class="mono">Base</dt><dd>Reykjavík</dd></div>
+        </dl>
+      </div>
+
+      <a class="scroll-cue" href="#work" aria-label="Scroll to work">
+        <span class="mono">Scroll</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Distinctive</span><span class="sep">▌</span>
+        <span>Fast</span><span class="sep">▌</span>
+        <span>Hand-coded</span><span class="sep">▌</span>
+        <span>Responsive</span><span class="sep">▌</span>
+        <span>Built to convert</span><span class="sep">▌</span>
+        <span>Distinctive</span><span class="sep">▌</span>
+        <span>Fast</span><span class="sep">▌</span>
+        <span>Hand-coded</span><span class="sep">▌</span>
+        <span>Responsive</span><span class="sep">▌</span>
+        <span>Built to convert</span><span class="sep">▌</span>
+      </div>
+    </div>
+
+    <!-- ============ WORK ============ -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="mono section-label"><span class="idx">01</span> — Selected work</p>
+          <h2>Already out there, working hard.</h2>
+          <p class="section-lede">
+            Two of Iceland's most-watched media brands run on websites I designed and built.
+            Real traffic, real audiences — not mockups.
+          </p>
+        </header>
+
+        <div class="work-grid">
+          <!-- Chess After Dark -->
+          <article class="work-card reveal">
+            <a class="work-media cad" href="https://chessafterdark.is" target="_blank" rel="noopener" aria-label="Visit chessafterdark.is">
+              <div class="browser" aria-hidden="true">
+                <div class="browser-bar"><span></span><span></span><span></span><em class="mono">chessafterdark.is</em></div>
+                <div class="browser-body">
+                  <div class="cad-logo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="knight"><path d="M9 4c1.8 0 3 .9 3.8 2.1L15 5l.6 1.7C17 7.6 18 9.2 18 11v2H7c0-2 .6-3 1.6-4.2L7 7l1.2-.8C8 5.4 8.3 4 9 4Z"/><path d="M5 20h14M6 16h12v3H6z"/></svg>
+                    <span>Chess<em>After</em>Dark</span>
+                  </div>
+                  <div class="cad-stats">
+                    <span><b>340+</b> þættir</span>
+                    <span><b>2.5M+</b> spilanir</span>
+                    <span><b>1M+</b> klst.</span>
+                  </div>
+                  <div class="cad-bars"><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </a>
+            <div class="work-info">
+              <div class="work-titlerow">
+                <h3>Chess After Dark</h3>
+                <span class="year mono">2024</span>
+              </div>
+              <p>A home for Iceland's biggest podcast — built to organise 340+ episodes and turn visitors into listeners.</p>
+              <ul class="tags">
+                <li>Brand</li><li>Web design</li><li>Development</li>
+              </ul>
+              <a class="work-link" href="https://chessafterdark.is" target="_blank" rel="noopener">
+                Visit live site
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Betkastið -->
+          <article class="work-card reveal">
+            <a class="work-media bet" href="https://betkastid.is" target="_blank" rel="noopener" aria-label="Visit betkastid.is">
+              <div class="browser" aria-hidden="true">
+                <div class="browser-bar"><span></span><span></span><span></span><em class="mono">betkastid.is</em></div>
+                <div class="browser-body">
+                  <p class="bet-tag mono">Hverjar eru líkurnar?</p>
+                  <p class="bet-title">Betkastið</p>
+                  <div class="bet-ratings">
+                    <div><span class="mono">Stuð</span><b>2.50</b></div>
+                    <div><span class="mono">Þekking</span><b>1.75</b></div>
+                    <div><span class="mono">Vitleysa</span><b>3.20</b></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="work-info">
+              <div class="work-titlerow">
+                <h3>Betkastið</h3>
+                <span class="year mono">2024</span>
+              </div>
+              <p>A sports-betting podcast with personality — clip galleries, a playful ratings system and filtered browsing.</p>
+              <ul class="tags">
+                <li>Web design</li><li>Development</li><li>Motion</li>
+              </ul>
+              <a class="work-link" href="https://betkastid.is" target="_blank" rel="noopener">
+                Visit live site
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Your project (CTA card) -->
+          <article class="work-card work-card--open reveal">
+            <a class="work-media open" href="mailto:briembenni@gmail.com?subject=New%20website%20project" aria-label="Start your project">
+              <div class="open-inner">
+                <span class="open-plus" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+                <p class="mono">Your company here</p>
+              </div>
+            </a>
+            <div class="work-info">
+              <div class="work-titlerow">
+                <h3>The next one</h3>
+                <span class="year mono">2026</span>
+              </div>
+              <p>There's room for one more in the portfolio. If your website doesn't do your company justice yet, let's fix that.</p>
+              <ul class="tags">
+                <li>Available now</li>
+              </ul>
+              <a class="work-link" href="mailto:briembenni@gmail.com?subject=New%20website%20project">
+                Pitch your idea
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section--alt" id="services">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="mono section-label"><span class="idx">02</span> — Services</p>
+          <h2>One person, the whole website.</h2>
+          <p class="section-lede">
+            From the first idea to the live site, you work with me directly — no account managers,
+            no handoffs, no template farm.
+          </p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <span class="service-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 4.5 3.3 7.3 8 8 4.7-.7 8-3.5 8-8V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <h3>Design</h3>
+            <p>A look that's unmistakably yours — typography, colour and layout chosen for your brand, never pulled off a shelf.</p>
+            <ul class="service-list">
+              <li>Brand &amp; visual identity</li>
+              <li>Distinctive UI design</li>
+              <li>Responsive layouts</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg>
+            </span>
+            <h3>Development</h3>
+            <p>Fast, hand-written code that scores well, loads instantly and keeps working long after launch.</p>
+            <ul class="service-list">
+              <li>Modern, lightweight builds</li>
+              <li>Performance &amp; SEO</li>
+              <li>Animation &amp; interaction</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><path d="m5 5 3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3.5"/></svg>
+            </span>
+            <h3>The whole thing</h3>
+            <p>Brand, design, build and launch handled end-to-end — plus the small fixes and updates that keep it sharp.</p>
+            <ul class="service-list">
+              <li>Strategy &amp; content</li>
+              <li>Launch &amp; hosting setup</li>
+              <li>Ongoing care</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="mono section-label"><span class="idx">03</span> — Process</p>
+          <h2>Four steps, no surprises.</h2>
+          <p class="section-lede">A simple way of working that keeps things moving and keeps you in the loop.</p>
+        </header>
+
+        <ol class="process">
+          <li class="process-step reveal">
+            <span class="step-no mono">01</span>
+            <h3>Talk</h3>
+            <p>We sit down — in person or on a call — and figure out what your company actually needs the website to do.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="step-no mono">02</span>
+            <h3>Design</h3>
+            <p>I shape a direction that looks like you and nobody else, and we refine it together until it feels right.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="step-no mono">03</span>
+            <h3>Build</h3>
+            <p>I hand-code the site to be fast, accessible and easy to run — tested on every screen size.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="step-no mono">04</span>
+            <h3>Launch</h3>
+            <p>We go live, I set up hosting and analytics, and I stick around for the tweaks that come after.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--alt" id="about">
+      <div class="wrap about-grid">
+        <div class="about-media reveal" aria-hidden="true">
+          <div class="about-card">
+            <span class="about-mark">b<span class="caret"></span></span>
+            <div class="about-card-foot mono">
+              <span>Benedikt Briem</span>
+              <span>Reykjavík · IS</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-body reveal">
+          <p class="mono section-label"><span class="idx">04</span> — About</p>
+          <h2>I build the website I'd want for my own company.</h2>
+          <p>
+            I started building websites in 2023 because too many good companies were stuck
+            with sites that made them look smaller than they are. I fix that — with design
+            that has a point of view and code I'm willing to put my name on.
+          </p>
+          <p>
+            Working with me means working with one person who cares about the whole thing:
+            how it looks, how fast it loads, and how it makes people feel about your business.
+          </p>
+          <dl class="facts">
+            <div><dt class="mono">Since</dt><dd>2023</dd></div>
+            <div><dt class="mono">Based in</dt><dd>Reykjavík, Iceland</dd></div>
+            <div><dt class="mono">Works with</dt><dd>Companies of every size</dd></div>
+            <div><dt class="mono">Speaks</dt><dd>Íslenska &amp; English</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="hero-glow contact-glow" aria-hidden="true"></div>
+      <div class="wrap contact-inner reveal">
+        <p class="mono section-label">Let's build it</p>
+        <h2 class="contact-title">
+          Got a company that deserves<br />a better website<span class="caret big" aria-hidden="true"></span>
+        </h2>
+        <p class="contact-lede">
+          Tell me what you're working on. I reply to every message personally, usually within a day.
+        </p>
+        <a class="btn btn-primary btn-lg" href="mailto:briembenni@gmail.com?subject=New%20website%20project">
+          briembenni@gmail.com
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="wordmark" href="#top">briem<span class="caret" aria-hidden="true"></span></a>
+        <p class="mono">Web design &amp; development · Reykjavík, Ísland</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="mailto:briembenni@gmail.com">Email</a>
+      </nav>
+    </div>
+    <div class="wrap footer-base mono">
+      <span>© <span id="year">2026</span> Benedikt Briem</span>
+      <a href="#top" class="to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

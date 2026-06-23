@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="briem">
+  <rect width="32" height="32" rx="7" fill="#0B0D12"/>
+  <!-- lowercase b: stem + bowl ring -->
+  <path fill="#ECEEF2" fill-rule="evenodd"
+        d="M7.4 5.6h3.1v9.0a6.7 6.7 0 1 1 0 6.0v4.8H7.4V5.6Zm3.0 13.0a3.7 3.7 0 1 0 7.4 0 3.7 3.7 0 0 0-7.4 0Z"/>
+  <!-- blue caret -->
+  <rect x="22.0" y="9.6" width="3.0" height="14.0" rx="0.6" fill="#5B8CFF"/>
+</svg>
