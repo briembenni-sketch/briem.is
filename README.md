@@ -17,20 +17,35 @@ be hosted anywhere:
 
 No build step. No framework. No tracking.
 
-## Design system — “the caret”
+## Design system — “the caret”, aurora edition
+
+A dark, modern fintech/crypto-landing aesthetic — aurora gradient glows,
+glassmorphism, and a glassy “performance dashboard” hero mockup — rendered in a
+**blue → cyan** palette (no purple).
 
 | Token | Value |
 | --- | --- |
 | Display type | Bricolage Grotesque |
 | Body type | Hanken Grotesk |
 | Mono / labels | JetBrains Mono |
-| Ink (background) | `#0B0D12` |
-| Text | `#ECEEF2` |
+| Background | `#070A14` |
+| Text | `#EAF0FB` |
 | Accent (blue) | `#5B8CFF` / `#2F6BFF` |
+| Accent (cyan) | `#38BDF8` |
+| Brand gradient | `linear-gradient(135deg, #2F6BFF, #38BDF8)` |
 
-The signature element is the blinking blue **caret** `▌` that trails the `briem`
-wordmark — a code/text cursor that marks every build as hand-made. All colour
-pairings meet WCAG AA contrast, and motion respects `prefers-reduced-motion`.
+The signature element is the blinking **caret** `▌` that trails the `briem`
+wordmark — a code/text cursor that marks every build as hand-made. The landing
+layers on:
+
+- an ambient **aurora** glow and a faint hero grid,
+- a gradient-bordered, glassmorphic **hero dashboard** (animated Lighthouse
+  chart + floating metric chips),
+- a market-style **ticker** and an animated **stats strip** (count-up on scroll),
+- glass **feature cards** with gradient icon tiles and a gradient **CTA band**.
+
+All colour pairings meet WCAG AA contrast, the site is fully visible without
+JavaScript, and every animation respects `prefers-reduced-motion`.
 
 ## Running locally
 
