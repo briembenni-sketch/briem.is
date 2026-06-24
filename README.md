@@ -1,9 +1,12 @@
 # briem.is
 
-The personal-brand website for **Benedikt Briem** — an independent web designer
-and developer in Reykjavík who builds fast, distinctive websites for companies.
+The website for **Briem** — a web studio in Reykjavík (founded by Benedikt
+Briem) that designs and builds fast, distinctive websites for companies.
 
 Live message: _“Vefsíður sem láta fólk taka fyrirtækið þitt alvarlega.”_
+
+The `#work` section showcases live projects with real screenshots stored in
+`work/` (e.g. `work/chessafterdark.jpg`, `work/betkastid.jpg`).
 
 ## Stack
 
