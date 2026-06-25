@@ -525,64 +525,21 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @keyframes floaty { 50% { transform: translateY(-10px); } }
 
 /* =========================================================
-   TICKER (market-style strip)
+   TAGLINE BAND
    ========================================================= */
-.ticker {
+.tagline-band {
   border-block: 1px solid var(--line);
-  background: var(--bg-2);
-  padding: 0.95rem 0;
-  overflow: hidden;
-  white-space: nowrap;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
 }
-.ticker-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 2.5rem;
-  animation: scroll-x 32s linear infinite;
-}
-.ticker-track .item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.ticker-track .item b { color: var(--text); font-weight: 500; }
-.ticker-track .item .up { color: var(--up); font-size: 0.7rem; }
-.ticker-track .sep { color: var(--blue); opacity: 0.4; }
-@keyframes scroll-x { to { transform: translateX(-50%); } }
-
-/* =========================================================
-   STATS STRIP
-   ========================================================= */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-top: clamp(2rem, 5vw, 3rem);
-}
-.stat {
-  background: var(--bg-3);
-  padding: clamp(1.5rem, 4vw, 2.25rem);
-  text-align: center;
-}
-.stat .num {
+.tagline {
   font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 2.9rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: var(--text);
+  max-width: 22ch;
 }
-.stat .label { margin-top: 0.55rem; }
 
 /* =========================================================
    SECTIONS (generic)
@@ -849,7 +806,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
    RESPONSIVE
    ========================================================= */
 @media (min-width: 600px) {
-  .stats { grid-template-columns: repeat(4, 1fr); }
   .facts { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -896,6 +852,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .hl-bar { transform: scaleX(1); }
   .chart-line { stroke-dashoffset: 0; }
   .chart-area, .chart-dot { opacity: 1; }
-  .ticker-track { animation: none; }
+
   .float-chip { animation: none; }
 }
