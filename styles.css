@@ -389,14 +389,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   margin-bottom: clamp(1.75rem, 4vw, 2.25rem);
 }
 
-.hero-trust {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: var(--muted-2);
-}
-.hero-trust .stars { color: var(--cyan); letter-spacing: 2px; font-size: 0.9rem; }
-.hero-trust .mono { color: var(--muted); text-transform: none; letter-spacing: 0.02em; }
 
 /* ---------- hero dashboard visual ---------- */
 .hero-visual {
@@ -524,22 +516,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .chip-2 .gain { color: var(--up); }
 @keyframes floaty { 50% { transform: translateY(-10px); } }
 
-/* =========================================================
-   TAGLINE BAND
-   ========================================================= */
-.tagline-band {
-  border-block: 1px solid var(--line);
-  padding-block: clamp(2.5rem, 6vw, 4rem);
-}
-.tagline {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
-  letter-spacing: -0.025em;
-  line-height: 1.25;
-  color: var(--text);
-  max-width: 22ch;
-}
 
 /* =========================================================
    SECTIONS (generic)
@@ -556,8 +532,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   color: var(--cyan);
 }
 .section-label .idx { color: var(--muted-2); }
-.section-head h2,
-.about-body h2 {
+.section-head h2 {
   font-family: var(--display);
   font-weight: 700;
   font-size: clamp(1.9rem, 5vw, 3.1rem);
@@ -704,49 +679,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .process-step h3 { font-family: var(--display); font-weight: 700; font-size: 1.45rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 .process-step p { color: var(--muted); font-size: 0.95rem; }
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
-.about-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 6vw, 4rem); align-items: center; }
-.about-media { order: -1; }
-.about-card {
-  aspect-ratio: 4 / 5;
-  max-width: 360px;
-  border-radius: var(--radius-lg);
-  border: 1px solid transparent;
-  background:
-    linear-gradient(var(--bg-3), var(--bg-3)) padding-box,
-    var(--grad) border-box;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 0 70px -30px var(--glow-blue);
-}
-.about-card::before {
-  content: "";
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(120% 90% at 30% 10%, rgba(47,107,255,0.28), transparent 60%),
-    radial-gradient(100% 80% at 80% 100%, rgba(56,189,248,0.18), transparent 60%);
-}
-.about-card::after {
-  content: "";
-  position: absolute; inset: 0;
-  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(circle at 50% 40%, #000, transparent 75%);
-  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000, transparent 75%);
-}
-.about-mark { position: relative; font-family: var(--display); font-weight: 800; font-size: clamp(6rem, 22vw, 9rem); line-height: 1; letter-spacing: -0.04em; display: inline-flex; align-items: flex-start; z-index: 1; }
-.about-mark .caret { height: 0.5em; margin-top: 0.12em; }
-.about-card-foot { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 1.25rem; display: flex; justify-content: space-between; z-index: 1; }
-
-.about-body p { color: var(--muted); margin-bottom: 1.1rem; max-width: 50ch; }
-.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-.facts dt { margin-bottom: 0.3rem; }
-.facts dd { font-family: var(--display); font-weight: 600; font-size: 1.05rem; letter-spacing: -0.01em; }
 
 /* =========================================================
    CONTACT
@@ -806,7 +738,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
    RESPONSIVE
    ========================================================= */
 @media (min-width: 600px) {
-  .facts { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (min-width: 760px) {
@@ -820,9 +751,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .menu-toggle { display: none; }
   .mobile-nav { display: none !important; }
   .hero-inner { grid-template-columns: 1.12fr 0.88fr; }
-  .about-grid { grid-template-columns: 0.85fr 1.15fr; }
-  .about-media { order: 0; }
-  .about-card { margin-inline: 0; }
 
   /* alternating feature showcase */
   .feature { grid-template-columns: 1.08fr 0.92fr; }
