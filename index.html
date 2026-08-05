@@ -79,10 +79,18 @@
   </header>
 
   <main>
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO — fyrri verk í fullscreen ============ -->
     <section class="hero">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-slides">
+        <div class="hero-slide is-active" data-name="Chess After Dark" data-url="https://chessafterdark.is" data-domain="chessafterdark.is">
+          <img src="work/chessafterdark.jpg" alt="Forsíða Chess After Dark — vefur hannaður og smíðaður af Briem" loading="eager" decoding="async" />
+        </div>
+        <div class="hero-slide" data-name="Betkastið" data-url="https://betkastid.is" data-domain="betkastid.is">
+          <img src="work/betkastid.jpg" alt="Forsíða Betkastið — vefur hannaður og smíðaður af Briem" decoding="async" />
+        </div>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
       <div class="wrap hero-inner">
         <div class="hero-copy">
           <p class="eyebrow reveal">
@@ -98,13 +106,7 @@
             <span class="reveal" style="--d:4"><span class="hl"><span class="grad-text">fyrirtæki</span><span class="hl-bar" aria-hidden="true"></span></span>.</span>
           </h1>
 
-          <p class="hero-sub reveal" style="--d:5">
-            Við sérhæfum okkur í hönnun og veflausnum fyrir lítil og meðalstór fyrirtæki.
-            Okkar fókus er á persónulega þjónustu, skýr skilaboð og hagnýtar lausnir
-            sem draga fram sérstöðu þíns rekstrar.
-          </p>
-
-          <div class="hero-actions reveal" style="--d:6">
+          <div class="hero-actions reveal" style="--d:5">
             <a class="btn btn-primary" href="mailto:briembenni@gmail.com?subject=N%C3%BDtt%20vefverkefni">
               Byrjum verkefni
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
@@ -112,56 +114,22 @@
             <a class="btn btn-ghost" href="#work">Sjá verkin</a>
           </div>
         </div>
+      </div>
 
-        <!-- dashboard visual -->
-        <div class="hero-visual reveal" style="--d:4" aria-hidden="true">
-          <div class="hero-panel">
-            <div class="panel-head">
-              <span class="panel-dot"></span>
-              <span class="mono">briem · frammistaða</span>
-              <span class="panel-live mono">● Í loftinu</span>
-            </div>
-
-            <div class="panel-metric">
-              <div>
-                <p class="mono">Lighthouse-skor</p>
-                <p class="panel-big"><span class="grad-text">100</span><span class="panel-unit">/100</span></p>
-              </div>
-              <span class="panel-gain">▲ Toppstand</span>
-            </div>
-
-            <div class="panel-chart">
-              <svg viewBox="0 0 600 240" preserveAspectRatio="none" role="presentation">
-                <defs>
-                  <linearGradient id="chartStroke" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#2F6BFF"/>
-                    <stop offset="100%" stop-color="#38BDF8"/>
-                  </linearGradient>
-                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.32"/>
-                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path class="chart-area" d="M0,182 C40,162 55,150 78,150 C112,150 122,172 150,166 C190,158 196,110 226,110 C262,110 272,136 300,126 C340,112 346,80 376,80 C412,80 422,102 452,96 C492,88 502,54 526,50 C560,44 576,36 600,30 L600,240 L0,240 Z"/>
-                <path class="chart-line" pathLength="1" d="M0,182 C40,162 55,150 78,150 C112,150 122,172 150,166 C190,158 196,110 226,110 C262,110 272,136 300,126 C340,112 346,80 376,80 C412,80 422,102 452,96 C492,88 502,54 526,50 C560,44 576,36 600,30"/>
-                <circle class="chart-dot" cx="600" cy="30" r="6"/>
-              </svg>
-            </div>
-
-            <div class="panel-tiles">
-              <div class="tile"><span class="mono">Hleðsla</span><b>0.4s</b></div>
-              <div class="tile"><span class="mono">Aðgengi</span><b>AA</b></div>
-              <div class="tile"><span class="mono">SEO</span><b>100</b></div>
-            </div>
-          </div>
-
-          <div class="float-chip chip-1">
-            <span class="chip-ico">⚡</span>
-            <span><b>0.4s</b><span class="mono">Hleðslutími</span></span>
-          </div>
-          <div class="float-chip chip-2">
-            <span><b><span class="gain">▲</span> 2.5M+</b><span class="mono">Spilanir</span></span>
-          </div>
+      <div class="wrap hero-slider-bar reveal" style="--d:6">
+        <a class="hero-caption" href="https://chessafterdark.is" target="_blank" rel="noopener">
+          <span class="mono hero-caption-label">Fyrri verk</span>
+          <span class="hero-caption-name">Chess After Dark</span>
+          <span class="mono hero-caption-domain">chessafterdark.is ↗</span>
+        </a>
+        <div class="hero-slider-nav" role="group" aria-label="Flakka milli verka">
+          <button class="slider-btn" data-dir="-1" aria-label="Fyrra verk">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <div class="slider-dots" aria-hidden="true"><span class="is-active"></span><span></span></div>
+          <button class="slider-btn" data-dir="1" aria-label="Næsta verk">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
         </div>
       </div>
     </section>
