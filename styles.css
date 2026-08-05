@@ -329,101 +329,83 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   align-items: center;
 }
 
-/* ---------- fyrri verk í container ---------- */
+/* ---------- fyrri verk: tölva + sími ---------- */
 .hero-showcase {
   position: relative;
   justify-self: center;
   width: 100%;
-  max-width: 560px;
+  max-width: 580px;
   isolation: isolate;
+  padding-bottom: 9%;
 }
 .hero-showcase .shot-glow {
   background: radial-gradient(closest-side, rgba(47,107,255,0.6), transparent);
 }
-.hero-showcase .browser {
+
+/* Betkastið í tölvu-ramma */
+.showcase-desktop {
+  display: block;
+  width: 86%;
+  transition: transform 0.35s var(--ease);
+}
+.showcase-desktop:hover { transform: translateY(-5px); }
+.showcase-desktop .browser {
+  display: block;
   border-radius: var(--radius);
   border: 1px solid var(--line-2);
   background: var(--card);
   overflow: hidden;
   box-shadow: 0 30px 60px -30px rgba(0,0,0,0.85);
 }
-.hero-slides {
-  position: relative;
-  aspect-ratio: 1600 / 1000;
-}
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.6s var(--ease), visibility 0.6s var(--ease);
-}
-.hero-slide.is-active { opacity: 1; visibility: visible; }
-.hero-slide img {
+.showcase-desktop img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 1000;
   object-fit: cover;
   object-position: top center;
 }
 
-/* heiti verks + flakk-takkar undir rammanum */
-.hero-slider-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1rem;
+/* Chess After Dark í síma-ramma */
+.showcase-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 31%;
+  display: block;
+  z-index: 2;
+  transition: transform 0.35s var(--ease);
 }
-.hero-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.75rem 1rem;
-  border-radius: 14px;
+.showcase-phone:hover { transform: translateY(-5px); }
+.phone {
+  position: relative;
+  display: block;
+  padding: 7px;
+  border-radius: clamp(20px, 4.5vw, 30px);
   border: 1px solid var(--line-2);
-  background: color-mix(in srgb, var(--bg) 55%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+  background: var(--card);
+  box-shadow:
+    0 30px 60px -25px rgba(0,0,0,0.9),
+    0 0 50px -18px var(--glow-blue);
 }
-.hero-caption:hover { border-color: var(--cyan); transform: translateY(-2px); }
-.hero-caption-label { font-size: 0.58rem; color: var(--cyan); }
-.hero-caption-name {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+.phone-notch {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  z-index: 2;
 }
-.hero-slider-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.phone img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 2;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: clamp(14px, 3.5vw, 24px);
 }
-.slider-btn {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line-2);
-  background: color-mix(in srgb, var(--bg) 55%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: border-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
-}
-.slider-btn:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
-.slider-btn .ico { width: 20px; height: 20px; }
-.slider-dots { display: flex; gap: 0.45rem; }
-.slider-dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--line-2);
-  transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease);
-}
-.slider-dots span.is-active { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
 
 .eyebrow {
   display: inline-flex;
