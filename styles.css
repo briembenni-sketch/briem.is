@@ -407,35 +407,10 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   border-radius: clamp(14px, 3.5vw, 24px);
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.4rem 0.9rem 0.4rem 0.6rem;
-  border: 1px solid var(--line-2);
-  border-radius: 999px;
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
-}
-.eyebrow .pill {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #04122e;
-  background: var(--grad);
-  padding: 0.22rem 0.55rem;
-  border-radius: 999px;
-  font-weight: 600;
-}
-.eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
-
 .hero-title {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(2.45rem, 5.2vw, 4.1rem);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
   line-height: 1.0;
   letter-spacing: -0.035em;
   margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
