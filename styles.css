@@ -149,10 +149,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
    HEADER
    ========================================================= */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
   opacity: 0.5;
   background: color-mix(in srgb, var(--bg) 65%, transparent);
@@ -292,63 +290,90 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
    ========================================================= */
 .hero {
   position: relative;
-  height: 100svh;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
+  padding-top: clamp(3rem, 9vh, 6rem);
+  padding-bottom: clamp(3rem, 8vh, 5rem);
   overflow: hidden;
   isolation: isolate;
 }
-
-/* fyrri verk sem fullscreen bakgrunnur */
-.hero-slides {
+.hero-glow {
+  position: absolute;
+  z-index: -2;
+  top: -30%;
+  left: 60%;
+  width: min(1100px, 130%);
+  aspect-ratio: 1.4 / 1;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at center, rgba(47,107,255,0.30), transparent 60%),
+    radial-gradient(ellipse at 70% 40%, rgba(56,189,248,0.22), transparent 62%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.hero-grid {
   position: absolute;
   inset: 0;
-  z-index: -2;
-  background: var(--bg);
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 25%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 25%, #000 30%, transparent 80%);
+  opacity: 0.5;
+}
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+}
+
+/* ---------- fyrri verk í container ---------- */
+.hero-showcase {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 560px;
+  isolation: isolate;
+}
+.hero-showcase .shot-glow {
+  background: radial-gradient(closest-side, rgba(47,107,255,0.6), transparent);
+}
+.hero-showcase .browser {
+  border-radius: var(--radius);
+  border: 1px solid var(--line-2);
+  background: var(--card);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.85);
+}
+.hero-slides {
+  position: relative;
+  aspect-ratio: 1600 / 1000;
 }
 .hero-slide {
   position: absolute;
   inset: 0;
+  display: block;
   opacity: 0;
-  transition: opacity 0.9s var(--ease);
+  visibility: hidden;
+  transition: opacity 0.6s var(--ease), visibility 0.6s var(--ease);
 }
-.hero-slide.is-active { opacity: 1; }
+.hero-slide.is-active { opacity: 1; visibility: visible; }
 .hero-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
 }
-.hero-slide.is-active img { animation: heroZoom 10s var(--ease) forwards; }
-@keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.06); } }
 
-/* dökk slikja svo textinn sé læsilegur ofan á myndunum */
-.hero-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(to bottom, rgba(7,10,20,0.72), rgba(7,10,20,0.30) 45%, rgba(7,10,20,0.78)),
-    radial-gradient(85% 100% at 12% 55%, rgba(7,10,20,0.62), transparent 72%);
-}
-
-.hero-inner {
-  position: relative;
-  padding-top: 72px;
-}
-.hero-title { text-shadow: 0 4px 30px rgba(0,0,0,0.55); }
-
-/* stjórntæki neðst: heiti verks + flakk-takkar */
+/* heiti verks + flakk-takkar undir rammanum */
 .hero-slider-bar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: clamp(1.25rem, 4vh, 2.5rem);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  margin-top: 1rem;
 }
 .hero-caption {
   display: flex;
@@ -371,7 +396,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
-.hero-caption-domain { font-size: 0.6rem; }
 .hero-slider-nav {
   display: flex;
   align-items: center;
@@ -690,6 +714,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .header-inner .nav-cta { display: inline-flex; }
   .menu-toggle { display: none; }
   .mobile-nav { display: none !important; }
+  .hero-inner { grid-template-columns: 1.12fr 0.88fr; }
 
   /* alternating feature showcase */
   .feature { grid-template-columns: 1.08fr 0.92fr; }
@@ -717,5 +742,4 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .caret { opacity: 1; }
   .js .reveal, .reveal { opacity: 1; transform: none; }
   .hl-bar { transform: scaleX(1); }
-  .hero-slide.is-active img { animation: none; transform: none; }
 }
