@@ -45,6 +45,7 @@
   var slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
   var dots = Array.prototype.slice.call(document.querySelectorAll(".slider-dots span"));
   var caption = document.querySelector(".hero-caption");
+  var showcaseDomain = document.querySelector(".showcase-domain");
   if (slides.length > 1) {
     var current = 0;
     var timer = null;
@@ -57,7 +58,9 @@
       if (caption) {
         caption.href = slide.getAttribute("data-url");
         caption.querySelector(".hero-caption-name").textContent = slide.getAttribute("data-name");
-        caption.querySelector(".hero-caption-domain").textContent = slide.getAttribute("data-domain") + " ↗";
+      }
+      if (showcaseDomain) {
+        showcaseDomain.textContent = slide.getAttribute("data-domain");
       }
     };
 
