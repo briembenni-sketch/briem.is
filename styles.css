@@ -20,7 +20,7 @@
   /* text */
   --text:      #EAF0FB;
   --muted:     #93A0B8;
-  --muted-2:   #65728C;
+  --muted-2:   #7C89A6;
 
   /* accent — blue → cyan (no purple) */
   --blue:      #5B8CFF;   /* links, caret, highlight */
@@ -53,7 +53,7 @@
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 88px; overflow-x: clip; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 88px; overflow-x: clip; color-scheme: dark; }
 [hidden] { display: none !important; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -67,7 +67,10 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: clip;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
+
+a, button { touch-action: manipulation; }
 
 /* ambient aurora — fixed, behind everything */
 body::before {
@@ -101,7 +104,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   width: 100%;
   max-width: var(--wrap);
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
 }
 
 .mono {
@@ -472,6 +475,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   line-height: 1.04;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
+  text-wrap: balance;
 }
 .section-lede { color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); max-width: 52ch; }
 
