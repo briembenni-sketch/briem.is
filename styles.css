@@ -520,19 +520,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .feature-detail .btn { margin-top: 1.85rem; }
 
 
-/* Next-project CTA band */
-.next-band {
-  margin-top: clamp(3.5rem, 8vw, 7rem);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: linear-gradient(120deg, var(--ink-3), var(--ink-2));
-  padding: clamp(1.75rem, 5vw, 3rem);
-  display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;
-}
-.next-band .section-label { color: var(--blue); }
-.next-band h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 4vw, 2.2rem); letter-spacing: -0.02em; margin: 0.5rem 0 0.6rem; }
-.next-band p { color: var(--muted); max-width: 52ch; }
-
 /* =========================================================
    CONTACT
    ========================================================= */
@@ -617,8 +604,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .feature:nth-child(even) .feature-shot { order: 2; }
   .feature:nth-child(even) .feature-detail { order: 1; }
 
-  .next-band { flex-direction: row; align-items: center; justify-content: space-between; gap: 2.5rem; }
-  .next-band .btn { flex-shrink: 0; }
 }
 
 
