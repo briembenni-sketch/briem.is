@@ -506,8 +506,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .browser-bar em { margin-left: auto; font-style: normal; color: var(--muted-2); font-size: 0.7rem; }
 .feature-shot img { width: 100%; height: auto; display: block; aspect-ratio: 1600 / 1000; object-fit: cover; object-position: top center; }
 
-.feature-eyebrow { color: var(--blue); margin-bottom: 1rem; }
-.feature.bet .feature-eyebrow { color: #4ade80; }
 .feature-detail h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.8rem, 4.5vw, 2.6rem); letter-spacing: -0.03em; margin-bottom: 0.85rem; }
 .feature-detail > p { color: var(--muted); font-size: clamp(1rem, 2vw, 1.1rem); max-width: 46ch; }
 
@@ -519,11 +517,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .feature-note span { position: relative; padding-left: 1.2rem; color: var(--text); font-size: 0.96rem; }
 .feature-note span::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 1px; background: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.6); }
 
-.feature .tags { margin-top: 1.6rem; }
 .feature-detail .btn { margin-top: 1.85rem; }
 
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.tags li { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 0.35rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; }
 
 /* Next-project CTA band */
 .next-band {
