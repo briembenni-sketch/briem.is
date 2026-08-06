@@ -5,6 +5,7 @@ dist/
 
 # Design-time skills (installed via `npx skills add`, not part of the site)
 .agents/
+.claude/skills/
 skills-lock.json
 
 # OS / editor
