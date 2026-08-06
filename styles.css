@@ -186,67 +186,29 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   display: inline-flex;
   align-items: center;
 }
-.nav {
-  display: none;
+/* sími + netfang í header */
+.header-contact {
   margin-left: auto;
-  gap: 2rem;
-}
-.nav a {
-  font-size: 0.94rem;
-  font-weight: 500;
-  color: var(--muted);
-  position: relative;
-  padding: 0.4rem 0;
-  transition: color 0.2s var(--ease);
-}
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 0; height: 1.5px;
-  background: var(--grad);
-  transition: width 0.25s var(--ease);
-}
-.nav a:hover { color: var(--text); }
-.nav a:hover::after { width: 100%; }
-.header-inner .nav-cta { display: none; }
-
-/* hamburger */
-.menu-toggle {
-  margin-left: auto;
-  width: 44px; height: 44px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.menu-toggle span {
-  width: 22px; height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
-}
-.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
-.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
-
-.mobile-nav {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.5rem var(--gutter) 1.5rem;
-  border-top: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  align-items: center;
+  gap: 0.6rem;
 }
-.mobile-nav a {
-  padding: 0.9rem 0.25rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border-bottom: 1px solid var(--line);
+.header-contact .btn {
+  padding: 0.55rem 1.05rem;
+  font-size: 0.88rem;
 }
-.mobile-nav .btn { margin-top: 1rem; justify-content: center; border-bottom: 0; }
+.header-contact .ico { width: 16px; height: 16px; }
+
+@media (max-width: 679px) {
+  .header-contact .hc-label { display: none; }
+  .header-contact .btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+  }
+  .header-contact .ico { width: 18px; height: 18px; }
+}
 
 /* =========================================================
    BUTTONS
@@ -647,10 +609,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 @media (min-width: 980px) {
-  .nav { display: flex; }
-  .header-inner .nav-cta { display: inline-flex; }
-  .menu-toggle { display: none; }
-  .mobile-nav { display: none !important; }
   .hero-inner { grid-template-columns: 1.12fr 0.88fr; }
 
   /* alternating feature showcase */
