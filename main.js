@@ -17,30 +17,6 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* ---- mobile menu ---- */
-  var toggle = document.querySelector(".menu-toggle");
-  var mobileNav = document.getElementById("mobile-nav");
-  if (toggle && mobileNav) {
-    var setOpen = function (open) {
-      toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "Loka valmynd" : "Opna valmynd");
-      if (open) {
-        mobileNav.hidden = false;
-      } else {
-        mobileNav.hidden = true;
-      }
-    };
-    toggle.addEventListener("click", function () {
-      setOpen(toggle.getAttribute("aria-expanded") !== "true");
-    });
-    mobileNav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) setOpen(false);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setOpen(false);
-    });
-  }
-
   /* ---- reveal on scroll ---- */
   var revealEls = document.querySelectorAll(".reveal");
   if (prefersReduced || !("IntersectionObserver" in window)) {
