@@ -351,7 +351,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   position: relative;
   justify-self: center;
   width: 100%;
-  max-width: 640px;
+  max-width: 760px;
   isolation: isolate;
   padding-bottom: 9%;
 }
@@ -362,7 +362,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 /* Betkastið í tölvu-ramma */
 .showcase-desktop {
   display: block;
-  width: 86%;
+  width: 88%;
   transition: transform 0.35s var(--ease);
 }
 .showcase-desktop:hover { transform: translateY(-5px); }
@@ -670,7 +670,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 
 @media (min-width: 980px) {
-  .hero-inner { grid-template-columns: 1.12fr 0.88fr; }
+  .hero-inner { grid-template-columns: 0.95fr 1.05fr; }
 
   /* alternating feature showcase */
   .feature { grid-template-columns: 1.08fr 0.92fr; }
