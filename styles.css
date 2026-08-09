@@ -308,6 +308,40 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   opacity: 0.5;
 }
 
+/* fljúgandi pappírsflugvélar í bakgrunni */
+.hero-planes {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-planes span {
+  position: absolute;
+  left: -80px;
+  top: var(--t, 20%);
+  opacity: var(--o, 0.1);
+  animation: planeFly var(--d, 30s) linear infinite;
+  animation-delay: var(--dl, 0s);
+  will-change: transform;
+}
+.hero-planes svg {
+  width: calc(30px * var(--s, 1));
+  height: calc(30px * var(--s, 1));
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@keyframes planeFly {
+  0%   { transform: translate(0, 0) rotate(10deg); }
+  50%  { transform: translate(55vw, -3vh) rotate(3deg); }
+  100% { transform: translate(112vw, 1.5vh) rotate(12deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-planes { display: none; }
+}
+
 /* tónjafnari — hlaðvarps-undirskrift neðst í hero */
 .hero-eq {
   position: absolute;
