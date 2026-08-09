@@ -334,21 +334,10 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   left: var(--l, 50%);
   animation-name: moneyFall;
 }
-.hero-money svg {
-  width: calc(64px * var(--s, 1));
+.hero-money span svg {
+  width: calc(96px * var(--s, 1));
   height: auto;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
-}
-.hero-money .m-body { fill: #16234A; stroke: var(--blue); stroke-width: 1.5; }
-.hero-money .m-inner { fill: none; stroke: rgba(91, 140, 255, 0.55); stroke-width: 1; }
-.hero-money .m-seal { fill: rgba(56, 189, 248, 0.16); stroke: var(--cyan); stroke-width: 1.2; }
-.hero-money .m-val {
-  fill: #EAF0FB;
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-anchor: middle;
 }
 @keyframes moneyFly {
   0%   { transform: translate(0, 0) rotate(-9deg); }
