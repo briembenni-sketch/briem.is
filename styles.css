@@ -308,38 +308,64 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   opacity: 0.5;
 }
 
-/* fljúgandi pappírsflugvélar í bakgrunni */
-.hero-planes {
+/* fljúgandi 10.000 kr seðlar í bakgrunni */
+.hero-money {
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
 }
-.hero-planes span {
+.hero-money span {
   position: absolute;
-  left: -80px;
-  top: var(--t, 20%);
-  opacity: var(--o, 0.1);
-  animation: planeFly var(--d, 30s) linear infinite;
+  opacity: var(--o, 0.55);
+  animation-duration: var(--d, 20s);
   animation-delay: var(--dl, 0s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   will-change: transform;
 }
-.hero-planes svg {
-  width: calc(30px * var(--s, 1));
-  height: calc(30px * var(--s, 1));
-  fill: none;
-  stroke: var(--blue);
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.hero-money .fly {
+  left: -110px;
+  top: var(--t, 20%);
+  animation-name: moneyFly;
 }
-@keyframes planeFly {
-  0%   { transform: translate(0, 0) rotate(10deg); }
-  50%  { transform: translate(55vw, -3vh) rotate(3deg); }
-  100% { transform: translate(112vw, 1.5vh) rotate(12deg); }
+.hero-money .fall {
+  top: -70px;
+  left: var(--l, 50%);
+  animation-name: moneyFall;
+}
+.hero-money svg {
+  width: calc(64px * var(--s, 1));
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+}
+.hero-money .m-body { fill: #16234A; stroke: var(--blue); stroke-width: 1.5; }
+.hero-money .m-inner { fill: none; stroke: rgba(91, 140, 255, 0.55); stroke-width: 1; }
+.hero-money .m-seal { fill: rgba(56, 189, 248, 0.16); stroke: var(--cyan); stroke-width: 1.2; }
+.hero-money .m-val {
+  fill: #EAF0FB;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-anchor: middle;
+}
+@keyframes moneyFly {
+  0%   { transform: translate(0, 0) rotate(-9deg); }
+  25%  { transform: translate(28vw, 2.5vh) rotate(7deg); }
+  50%  { transform: translate(56vw, -2vh) rotate(-7deg); }
+  75%  { transform: translate(84vw, 2vh) rotate(9deg); }
+  100% { transform: translate(112vw, -1vh) rotate(-9deg); }
+}
+@keyframes moneyFall {
+  0%   { transform: translate(0, 0) rotate(-14deg); }
+  25%  { transform: translate(3.5vw, 30vh) rotate(10deg); }
+  50%  { transform: translate(-2.5vw, 60vh) rotate(-12deg); }
+  75%  { transform: translate(3vw, 90vh) rotate(14deg); }
+  100% { transform: translate(-1.5vw, 118vh) rotate(-10deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-planes { display: none; }
+  .hero-money { display: none; }
 }
 
 /* tónjafnari — hlaðvarps-undirskrift neðst í hero */
