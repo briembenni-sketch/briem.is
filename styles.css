@@ -181,7 +181,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   line-height: 1;
   display: inline-flex;
   align-items: center;
+  gap: 0.55rem;
 }
+.logo-mark {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.footer-brand .logo-mark { width: 34px; height: 34px; }
 /* sími + netfang í header */
 .header-contact {
   margin-left: auto;
