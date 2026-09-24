@@ -16,6 +16,7 @@ be hosted anywhere:
 - `index.html` — single-page site (hero, work, services, process, about, contact)
 - `styles.css` — design system & all styling
 - `main.js` — small, vanilla interactions (menu, scroll reveal, sticky header)
+- `bg.js` — live WebGL aurora background (reacts to pointer & scroll, CSS fallback)
 - `favicon.svg` / `og.svg` — brand mark & social share image
 
 No build step. No framework. No tracking.
