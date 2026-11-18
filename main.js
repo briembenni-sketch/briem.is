@@ -67,6 +67,7 @@
   if (viewer) {
     var slides = viewer.querySelectorAll(".slide");
     var tabs = viewer.querySelectorAll(".viewer-tab");
+    var phones = viewer.querySelectorAll(".hslide");
     var idxEl = viewer.querySelector("[data-viewer-index]");
     var domEl = viewer.querySelector("[data-viewer-domain]");
     var current = 0;
@@ -75,9 +76,11 @@
       if (next === current) return;
       var prev = current;
       current = next;
-      slides.forEach(function (s, i) {
-        s.classList.toggle("is-active", i === current);
-        s.classList.toggle("is-prev", i === prev);
+      [slides, phones].forEach(function (set) {
+        set.forEach(function (s, i) {
+          s.classList.toggle("is-active", i === current);
+          s.classList.toggle("is-prev", i === prev);
+        });
       });
       tabs.forEach(function (t, i) {
         t.classList.toggle("is-active", i === current);
@@ -96,6 +99,26 @@
         if (e.animationName === "fill") go(current + 1);
       });
     });
+  }
+
+  /* ---- hero: gluggarnir hallast mjúklega á eftir bendlinum ---- */
+  var rig = document.querySelector(".showcase-rig");
+  var heroEl = document.querySelector(".hero");
+  if (rig && heroEl && !reduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var tx = 0, ty = 0, cx = 0, cy = 0, tilting = 0;
+    var tiltStep = function () {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      rig.style.setProperty("--px", cx.toFixed(3));
+      rig.style.setProperty("--py", cy.toFixed(3));
+      tilting = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.002 ? requestAnimationFrame(tiltStep) : 0;
+    };
+    var aim = function (x, y) { tx = x; ty = y; if (!tilting) tilting = requestAnimationFrame(tiltStep); };
+    heroEl.addEventListener("pointermove", function (e) {
+      var r = heroEl.getBoundingClientRect();
+      aim(((e.clientX - r.left) / r.width - 0.5) * 2, ((e.clientY - r.top) / r.height - 0.5) * 2);
+    });
+    heroEl.addEventListener("pointerleave", function () { aim(0, 0); });
   }
 
   /* ---- sýnidæmi: hvert skref velur myndina á skjánum ----

@@ -41,8 +41,10 @@ What moves:
 
 - **Dot field** (hero canvas) — ripples travel across a grid of dots, the
   pointer lights up the dots around it, a click sends a new ripple.
-- **Project viewer** — cycles through the four sites; the progress fill in each
-  tab is the timer (`animationend` advances), hover pauses it.
+- **Hero showcase** — the four sites as a tilted 3D browser window with the
+  same site on a phone in front; it leans toward the pointer and cycles on its
+  own. The progress fill in each tab is the timer (`animationend` advances),
+  hover pauses it.
 - **Project consoles** — in each case study a step list drives a screen: the
   active step's fill is the timer, it only runs while the project is in view,
   and it stops for good once the visitor picks a step themselves.
