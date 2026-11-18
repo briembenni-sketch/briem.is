@@ -19,7 +19,6 @@
 
   --accent:      #5B8CFF;  /* texti, caret, áherslur */
   --accent-fill: #2757CF;  /* fylling með hvítum texta (AA) */
-  --live:        #4ADE80;
 
   /* --c er litur verksins sem er í fókus; sjálfgefið vörumerkisblár */
   --c: var(--accent);
@@ -172,21 +171,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .hero-inner { padding-top: clamp(1.5rem, 4vh, 2.75rem); padding-bottom: clamp(2.5rem, 6vh, 4.5rem); }
 
-.hero-meta {
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--line);
-}
-.live { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--text); }
-.pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--live); }
-.pulse::after {
-  content: ""; position: absolute; inset: 0; border-radius: 50%;
-  border: 1px solid var(--live);
-  animation: ping 1.8s var(--ease) infinite;
-}
-@keyframes ping { to { transform: scale(3.2); opacity: 0; } }
-.hero-loc time { color: var(--text); font-variant-numeric: tabular-nums; }
-
 .hero-title {
   font-family: var(--display);
   font-stretch: 125%;
@@ -195,7 +179,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-size: clamp(2.1rem, 9.8vw, 7.6rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
-  margin-block: clamp(1.5rem, 4.5vh, 3rem) clamp(1.75rem, 5vh, 3.25rem);
+  margin-block: clamp(1rem, 3vh, 2rem) clamp(1.75rem, 5vh, 3.25rem);
 }
 .hero-title .line { display: block; white-space: nowrap; }
 
@@ -346,6 +330,7 @@ h2 {
 .project-detail > p { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.08rem); max-width: 46ch; }
 
 .project-stats { display: flex; margin-top: 1.75rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.project-stats + .project-notes { margin-top: 0; border-top: 0; }
 .project-stats > div { flex: 1; padding: 1rem 0.9rem 0.9rem 0; }
 .project-stats > div + div { padding-left: 0.9rem; border-left: 1px solid var(--line); }
 .project-stats dt {
@@ -365,6 +350,33 @@ h2 {
 .project-notes li::before { content: ""; position: absolute; left: 0; top: 1.2em; width: 7px; height: 7px; background: var(--c); }
 
 .project-detail .btn { margin-top: 1.75rem; }
+
+/* nærmyndir: tvær undirsíður og síminn, allar í sömu hæð */
+.project-gallery {
+  --h: clamp(150px, 46vw, 230px);
+  display: flex; gap: 10px;
+  margin-top: clamp(1.5rem, 3.5vw, 2.75rem);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+}
+.project-gallery::-webkit-scrollbar { display: none; }
+.project-gallery figure { flex: none; scroll-snap-align: start; }
+.project-gallery img {
+  height: var(--h); width: auto; max-width: none;
+  border: 1px solid var(--line-2);
+  transition: border-color 0.25s;
+}
+.project-gallery figure:hover img { border-color: var(--c); }
+.project-gallery figcaption { margin-top: 0.6rem; font-size: 0.66rem; }
+.project-gallery figcaption b { color: var(--c); font-weight: 500; margin-right: 0.7em; }
+@media (min-width: 900px) {
+  /* 1.6 : 1.6 : 0.462 eru hlutföll myndanna, svo hæðin verður jöfn */
+  .project-gallery { display: grid; grid-template-columns: 1.6fr 1.6fr 0.462fr; overflow: visible; margin-inline: 0; padding-inline: 0; }
+  .project-gallery img { width: 100%; height: auto; }
+}
 
 /* =========================================================
    TESTIMONIAL
@@ -411,5 +423,5 @@ h2 {
 .js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .caret, .pulse::after { animation: none; }
+  .caret { animation: none; }
 }

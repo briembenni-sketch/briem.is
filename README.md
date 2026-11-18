@@ -6,8 +6,8 @@ Briem) that designs and builds fast, distinctive websites for companies.
 Live message: _“Vefsíður sem láta fólk taka fyrirtækið þitt alvarlega.”_
 
 The `#work` section showcases live projects with real screenshots stored in
-`work/` (e.g. `work/chessafterdark.jpg`, `work/betkastid.jpg`, `work/intralegem.jpg`,
-`work/bellaitalia.jpg`).
+`work/` — per site: `<name>.jpg` (front page, 1600×1000), `<name>-2.jpg` and
+`<name>-3.jpg` (inner pages, 1200×750) and `<name>-m.jpg` (phone, 585×1266).
 
 ## Stack
 
@@ -41,7 +41,7 @@ What moves:
   pointer lights up the dots around it, a click sends a new ripple.
 - **Project viewer** — cycles through the four sites; the progress fill in each
   tab is the timer (`animationend` advances), hover pauses it.
-- **Headline decode**, a live **Reykjavík clock**, a **domain marquee**,
+- **Headline decode**, a **domain marquee**,
   count-up stats and screenshots that **tilt** toward the pointer.
 - The blinking **caret** still closes the headline and the contact title.
 

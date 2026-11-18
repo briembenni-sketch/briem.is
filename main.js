@@ -10,17 +10,6 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---- klukka í Reykjavík ---- */
-  var clock = document.getElementById("clock");
-  if (clock && window.Intl) {
-    var fmt = new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Atlantic/Reykjavik", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
-    });
-    var tick = function () { clock.textContent = fmt.format(new Date()); };
-    tick();
-    setInterval(tick, 1000);
-  }
-
   /* ---- reveal on scroll + talning ---- */
   var countUp = function (el) {
     var target = parseFloat(el.dataset.count);
