@@ -6,8 +6,8 @@ Briem) that designs and builds fast, distinctive websites for companies.
 Live message: _“Vefsíður sem láta fólk taka fyrirtækið þitt alvarlega.”_
 
 The `#work` section showcases live projects with real screenshots stored in
-`work/` (e.g. `work/chessafterdark.jpg`, `work/betkastid.jpg`, `work/intralegem.jpg`,
-`work/bellaitalia.jpg`).
+`work/` — per site: `<name>.jpg` (front page, 1600×1000), `<name>-2.jpg` and
+`<name>-3.jpg` (inner pages, 1200×750) and `<name>-m.jpg` (phone, 585×1266).
 
 ## Stack
 
