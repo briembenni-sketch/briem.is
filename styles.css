@@ -19,7 +19,6 @@
 
   --accent:      #5B8CFF;  /* texti, caret, áherslur */
   --accent-fill: #2757CF;  /* fylling með hvítum texta (AA) */
-  --live:        #4ADE80;
 
   /* --c er litur verksins sem er í fókus; sjálfgefið vörumerkisblár */
   --c: var(--accent);
@@ -172,21 +171,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .hero-inner { padding-top: clamp(1.5rem, 4vh, 2.75rem); padding-bottom: clamp(2.5rem, 6vh, 4.5rem); }
 
-.hero-meta {
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--line);
-}
-.live { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--text); }
-.pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--live); }
-.pulse::after {
-  content: ""; position: absolute; inset: 0; border-radius: 50%;
-  border: 1px solid var(--live);
-  animation: ping 1.8s var(--ease) infinite;
-}
-@keyframes ping { to { transform: scale(3.2); opacity: 0; } }
-.hero-loc time { color: var(--text); font-variant-numeric: tabular-nums; }
-
 .hero-title {
   font-family: var(--display);
   font-stretch: 125%;
@@ -195,7 +179,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-size: clamp(2.1rem, 9.8vw, 7.6rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
-  margin-block: clamp(1.5rem, 4.5vh, 3rem) clamp(1.75rem, 5vh, 3.25rem);
+  margin-block: clamp(1rem, 3vh, 2rem) clamp(1.75rem, 5vh, 3.25rem);
 }
 .hero-title .line { display: block; white-space: nowrap; }
 
@@ -439,5 +423,5 @@ h2 {
 .js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .caret, .pulse::after { animation: none; }
+  .caret { animation: none; }
 }

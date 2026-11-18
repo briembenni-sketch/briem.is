@@ -41,7 +41,7 @@ What moves:
   pointer lights up the dots around it, a click sends a new ripple.
 - **Project viewer** — cycles through the four sites; the progress fill in each
   tab is the timer (`animationend` advances), hover pauses it.
-- **Headline decode**, a live **Reykjavík clock**, a **domain marquee**,
+- **Headline decode**, a **domain marquee**,
   count-up stats and screenshots that **tilt** toward the pointer.
 - The blinking **caret** still closes the headline and the contact title.
 
