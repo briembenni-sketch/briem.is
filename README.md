@@ -5,9 +5,11 @@ Briem) that designs and builds fast, distinctive websites for companies.
 
 Live message: _“Vefsíður sem láta fólk taka fyrirtækið þitt alvarlega.”_
 
-The `#work` section showcases live projects with real screenshots stored in
-`work/` — per site: `<name>.jpg` (front page, 1600×1000), `<name>-2.jpg` and
-`<name>-3.jpg` (inner pages, 1200×750) and `<name>-m.jpg` (phone, 585×1266).
+The `#work` section presents each project as a five-step walk-through in the
+order a visitor moves through the site (front page → browse → detail → contact
+→ phone). Every step has exactly one screenshot in `work/`:
+`<name>.jpg` (front page, 1600×1000), `<name>-2.jpg` to `<name>-4.jpg`
+(steps 2–4, 1200×750) and `<name>-m.jpg` (phone, 585×1266).
 
 ## Stack
 
@@ -41,8 +43,10 @@ What moves:
   pointer lights up the dots around it, a click sends a new ripple.
 - **Project viewer** — cycles through the four sites; the progress fill in each
   tab is the timer (`animationend` advances), hover pauses it.
-- **Headline decode**, a **domain marquee**,
-  count-up stats and screenshots that **tilt** toward the pointer.
+- **Project consoles** — in each case study a step list drives a screen: the
+  active step's fill is the timer, it only runs while the project is in view,
+  and it stops for good once the visitor picks a step themselves.
+- **Headline decode**, a **domain marquee** and count-up stats.
 - The blinking **caret** still closes the headline and the contact title.
 
 The site is fully visible without JavaScript and every animation respects
@@ -65,8 +69,9 @@ repository root. No configuration required.
 ## Editing
 
 - **Contact email** — search for `briem@projectbriem.is` to swap it.
-- **Work** — case studies live in the `#work` section of `index.html`; add the
-  same site to the hero viewer (slide + tab) and the marquee.
+- **Work** — case studies live in the `#work` section of `index.html`. Keep the
+  rule: one step, one sentence, one screenshot that shows exactly that. Add a
+  new site to the hero viewer (slide + tab) and the marquee as well.
 - **Copy is written in Icelandic (Íslenska).** The page declares `lang="is"`.
 
 ---

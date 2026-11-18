@@ -273,110 +273,132 @@ h2 {
 .section-lede { margin-top: 1.25rem; color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); max-width: 52ch; }
 
 /* =========================================================
-   WORK
+   WORK — hvert verk er „console“: skref vinstra megin, skjár hægra megin
    ========================================================= */
-.project { border-top: 1px solid var(--line-2); padding-bottom: clamp(3rem, 7vw, 6rem); }
+.project { border-top: 1px solid var(--line-2); padding-bottom: clamp(4rem, 9vw, 8rem); }
 .project:last-child { padding-bottom: 0; }
-.project-head {
-  display: flex; align-items: center; gap: 1.25rem;
-  padding-block: 0.95rem;
-  margin-bottom: clamp(1.5rem, 4vw, 2.75rem);
-}
+.project-head { display: flex; align-items: center; gap: 1.25rem; padding-block: 0.95rem; }
 .project-idx { color: var(--c); }
 .project-head a { margin-left: auto; color: var(--text); transition: color 0.2s; }
 .project-head a:hover { color: var(--c); }
 
-.project-body { display: grid; gap: clamp(1.75rem, 4vw, 3.5rem); align-items: center; }
+.project-intro { display: grid; gap: 1.25rem 3rem; padding-block: clamp(1.5rem, 4vw, 3rem) clamp(1.75rem, 4vw, 2.75rem); }
+.project-intro h3 {
+  font-family: var(--display); font-stretch: 125%; font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2rem, 6.2vw, 4.6rem); line-height: 0.95; letter-spacing: -0.035em;
+}
+.project-summary p { color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.1rem); max-width: 50ch; }
+.project-summary .btn { margin-top: 1.5rem; }
 @media (min-width: 900px) {
-  .project-body { grid-template-columns: 1.3fr 0.7fr; }
-  .project:nth-of-type(even) .project-body { grid-template-columns: 0.7fr 1.3fr; }
-  .project:nth-of-type(even) .project-shot { order: 2; }
+  .project-intro { grid-template-columns: 1.15fr 0.85fr; align-items: end; }
 }
 
-/* skjáskot: hornamerki í lit verksins, hallast á eftir bendlinum */
-.project-shot { position: relative; display: block; perspective: 1200px; }
-.project-shot::before, .project-shot::after {
-  content: ""; position: absolute; width: 18px; height: 18px; z-index: 2;
-  border: 2px solid var(--c);
-  opacity: 0; transition: opacity 0.25s, transform 0.35s var(--ease);
-  pointer-events: none;
-}
-.project-shot::before { top: -7px; left: -7px; border-right: 0; border-bottom: 0; transform: translate(8px, 8px); }
-.project-shot::after { bottom: -7px; right: -7px; border-left: 0; border-top: 0; transform: translate(-8px, -8px); }
-.project-shot:hover::before, .project-shot:hover::after,
-.project-shot:focus-visible::before, .project-shot:focus-visible::after { opacity: 1; transform: none; }
-
-.frame {
-  display: block;
-  border: 1px solid var(--line-2);
-  background: var(--bg-2);
-  overflow: hidden;
-  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  transition: transform 0.5s var(--ease), border-color 0.25s;
-  will-change: transform;
-}
-.project-shot.is-tilting .frame { transition: transform 0.08s linear, border-color 0.25s; }
-.project-shot:hover .frame { border-color: var(--c); }
-.frame-bar { display: flex; align-items: center; gap: 6px; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); font-size: 0.66rem; }
-.frame-bar i { width: 8px; height: 8px; background: var(--line-2); }
-.frame-bar em { margin-left: auto; font-style: normal; }
-.frame img { width: 100%; height: auto; aspect-ratio: 1600 / 1000; object-fit: cover; object-position: top center; }
-
-.project-detail h3 {
-  font-family: var(--display); font-stretch: 112%; font-weight: 800;
-  font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.02; letter-spacing: -0.03em;
-  margin-bottom: 1rem;
-}
-.project-detail > p { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.08rem); max-width: 46ch; }
-
-.project-stats { display: flex; margin-top: 1.75rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.project-stats + .project-notes { margin-top: 0; border-top: 0; }
-.project-stats > div { flex: 1; padding: 1rem 0.9rem 0.9rem 0; }
-.project-stats > div + div { padding-left: 0.9rem; border-left: 1px solid var(--line); }
+.project-stats { display: flex; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.project-stats > div { flex: 1; padding: 1.1rem 0.9rem 1rem 0; }
+.project-stats > div + div { padding-left: clamp(0.9rem, 2.5vw, 1.75rem); border-left: 1px solid var(--line); }
 .project-stats dt {
   font-family: var(--display); font-stretch: 112%; font-weight: 800;
-  font-size: clamp(1.5rem, 3.2vw, 2.1rem); line-height: 1; letter-spacing: -0.02em;
+  font-size: clamp(1.6rem, 4.4vw, 3rem); line-height: 1; letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
   color: var(--c);
 }
-.project-stats dd { margin-top: 0.5rem; font-size: 0.66rem; }
+.project-stats dd { margin-top: 0.6rem; font-size: 0.66rem; }
 
-.project-notes { margin-top: 1.75rem; border-top: 1px solid var(--line); }
-.project-notes li {
-  position: relative; padding: 0.7rem 0 0.7rem 1.4rem;
-  border-bottom: 1px solid var(--line);
-  font-size: 0.95rem;
-}
-.project-notes li::before { content: ""; position: absolute; left: 0; top: 1.2em; width: 7px; height: 7px; background: var(--c); }
+.console { display: grid; gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: clamp(1.5rem, 3.5vw, 2.75rem); }
 
-.project-detail .btn { margin-top: 1.75rem; }
-
-/* nærmyndir: tvær undirsíður og síminn, allar í sömu hæð */
-.project-gallery {
-  --h: clamp(150px, 46vw, 230px);
-  display: flex; gap: 10px;
-  margin-top: clamp(1.5rem, 3.5vw, 2.75rem);
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
-  scrollbar-width: none;
-  margin-inline: calc(var(--gutter) * -1);
-  padding-inline: var(--gutter);
-}
-.project-gallery::-webkit-scrollbar { display: none; }
-.project-gallery figure { flex: none; scroll-snap-align: start; }
-.project-gallery img {
-  height: var(--h); width: auto; max-width: none;
+/* ---------- skjárinn ---------- */
+.stage {
+  position: sticky; top: var(--header-h); z-index: 5; order: -1;
   border: 1px solid var(--line-2);
-  transition: border-color 0.25s;
+  background: var(--bg);
 }
-.project-gallery figure:hover img { border-color: var(--c); }
-.project-gallery figcaption { margin-top: 0.6rem; font-size: 0.66rem; }
-.project-gallery figcaption b { color: var(--c); font-weight: 500; margin-right: 0.7em; }
+.stage::before, .stage::after {
+  content: ""; position: absolute; width: 16px; height: 16px; pointer-events: none;
+  border: 2px solid var(--c);
+}
+.stage::before { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
+.stage::after { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
+.stage-bar { display: flex; align-items: center; gap: 6px; padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--line); font-size: 0.66rem; }
+.stage-bar i { width: 8px; height: 8px; background: var(--line-2); }
+.stage-url { margin-left: 0.6rem; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.stage-url b { color: var(--c); font-weight: 500; }
+.stage-count { margin-left: auto; white-space: nowrap; }
+.stage-count b { color: var(--text); font-weight: 500; }
+
+.stage-view {
+  position: relative; aspect-ratio: 1600 / 1000; overflow: hidden;
+  background-color: var(--bg-2);
+  /* punktamynstur á bak við símaskotið */
+  background-image: radial-gradient(var(--line-2) 1px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+.shot { position: absolute; inset: 0; visibility: hidden; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.shot.is-phone { display: flex; align-items: center; justify-content: center; }
+.shot.is-phone img {
+  width: auto; height: 90%; object-fit: contain;
+  border: 1px solid var(--line-2); border-radius: 14px;
+  box-shadow: 0 0 0 5px var(--bg), 0 0 0 6px var(--c);
+}
+.shot.is-prev { visibility: visible; z-index: 1; }
+.shot.is-active { visibility: visible; z-index: 2; }
+.js .shot.is-active { animation: wipe 0.7s var(--ease) both; }
+.js .shot.is-phone.is-active { animation: phoneIn 0.6s var(--ease) both; }
+.shot.is-phone.is-active ~ .shot.is-prev, .shot.is-prev:has(~ .shot.is-phone.is-active) { visibility: hidden; }
+@keyframes phoneIn { from { opacity: 0; transform: translateY(18px); } }
+
+/* skannlína sem fer yfir skjáinn þegar skipt er um mynd */
+.stage-view::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 2px; z-index: 3;
+  background: var(--c); opacity: 0; pointer-events: none;
+}
+.stage-view.is-scanning::after { animation: scan 0.7s var(--ease) both; }
+@keyframes scan {
+  0% { left: 0; opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* ---------- skrefin ---------- */
+.steps { border-top: 1px solid var(--line); }
+.step {
+  position: relative; width: 100%;
+  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.25rem;
+  padding: 1rem 0.75rem 1.05rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  transition: background 0.2s;
+}
+.step:hover { background: var(--bg-2); }
+.step.is-active { background: var(--bg-2); }
+.step-num { padding-top: 0.2rem; font-size: 0.68rem; color: var(--muted-2); transition: color 0.2s; }
+.step.is-active .step-num { color: var(--c); }
+.step-text strong { display: block; font-size: 1.08rem; font-weight: 700; letter-spacing: -0.01em; color: var(--muted); transition: color 0.2s; }
+.step-text span { display: block; margin-top: 0.3rem; font-size: 0.93rem; line-height: 1.5; color: var(--muted-2); transition: color 0.2s; }
+.step:hover .step-text strong, .step.is-active .step-text strong { color: var(--text); }
+.step.is-active .step-text span { color: var(--muted); }
+/* fyllingin vinstra megin er tímamælirinn að næsta skrefi */
+.step .fill {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--c);
+  transform: scaleY(0); transform-origin: top;
+}
+.step.is-active .fill { transform: scaleY(1); }
+.console.is-live:not(.is-manual) .step.is-active .fill { animation: stepFill 6.5s linear both; }
+@keyframes stepFill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (hover: hover) { .console:hover .step .fill { animation-play-state: paused; } }
+
 @media (min-width: 900px) {
-  /* 1.6 : 1.6 : 0.462 eru hlutföll myndanna, svo hæðin verður jöfn */
-  .project-gallery { display: grid; grid-template-columns: 1.6fr 1.6fr 0.462fr; overflow: visible; margin-inline: 0; padding-inline: 0; }
-  .project-gallery img { width: 100%; height: auto; }
+  .console { grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr); align-items: start; }
+  .stage { order: 0; top: calc(var(--header-h) + 20px); }
+  .project:nth-of-type(even) .console { grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr); }
+  .project:nth-of-type(even) .stage { order: -1; }
 }
+@media (prefers-reduced-motion: reduce) {
+  .js .shot.is-active, .js .shot.is-phone.is-active, .stage-view.is-scanning::after { animation: none; }
+  .console.is-live:not(.is-manual) .step.is-active .fill { animation: none; }
+}
+
 
 /* =========================================================
    TESTIMONIAL

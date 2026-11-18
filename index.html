@@ -142,7 +142,7 @@
           <h2>Vefir sem tala sínu máli.</h2>
           <p class="section-lede">
             Hlaðvörp, lögmannsstofa og ferðaþjónusta. Ólíkur rekstur, sama krafan:
-            vefur sem fólk tekur mark á. Hér er hvert verk sýnt frá forsíðu niður í síma.
+            vefur sem fólk tekur mark á. Hvert verk er rakið í fimm skrefum, í sömu röð og gesturinn fer um vefinn.
           </p>
         </header>
 
@@ -153,33 +153,64 @@
             <span class="project-sector">Hlaðvarp</span>
             <a href="https://chessafterdark.is" target="_blank" rel="noopener">chessafterdark.is ↗</a>
           </header>
-          <div class="project-body">
-            <a class="project-shot" href="https://chessafterdark.is" target="_blank" rel="noopener" aria-label="Heimsækja chessafterdark.is">
-              <span class="frame">
-                <span class="frame-bar mono" aria-hidden="true"><i></i><i></i><i></i><em>chessafterdark.is</em></span>
-                <img src="work/chessafterdark.jpg" alt="Forsíða Chess After Dark — vefur hannaður og smíðaður af Briem" width="1600" height="1000" loading="lazy" decoding="async" />
-              </span>
-            </a>
-            <div class="project-detail">
-              <h3>Chess After Dark</h3>
-              <p>Heimili fyrir eitt stærsta hlaðvarp landsins. Vefsíða sem heldur utan um 370+ þætti og breytir gestum í hlustendur.</p>
-            <dl class="project-stats">
-              <div><dt data-count="370" data-suffix="+">370+</dt><dd class="mono">þættir</dd></div>
-              <div><dt data-count="2.5" data-dec="1" data-suffix="M+">2.5M+</dt><dd class="mono">spilanir</dd></div>
-              <div><dt data-count="1" data-suffix="M+">1M+</dt><dd class="mono">klst. hlustað</dd></div>
-            </dl>
-            <ul class="project-notes">
-              <li>Hver þáttur með sína síðu, gest og lengd</li>
-              <li>Leit og síur eftir efni: knattspyrna, pólitík, skák, viðskipti</li>
-              <li>Beinir tenglar á Spotify, Apple Podcasts, YouTube og Twitch</li>
-            </ul>
+
+          <div class="project-intro">
+            <h3>Chess After Dark</h3>
+            <div class="project-summary">
+              <p>Eitt stærsta hlaðvarp landsins þurfti heimili fyrir hundruð þátta. Vefurinn leiðir gestinn frá nýjasta þættinum, í gegnum safnið og alla leið að þættinum sem hann leitar að.</p>
               <a class="btn btn-ghost" href="https://chessafterdark.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
-          <div class="project-gallery">
-            <figure style="--d:0"><img src="work/chessafterdark-2.jpg" alt="Chess After Dark: Allir þættir" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>A</b>Allir þættir</figcaption></figure>
-            <figure style="--d:1"><img src="work/chessafterdark-3.jpg" alt="Chess After Dark: Þáttastjórnendur" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>B</b>Þáttastjórnendur</figcaption></figure>
-            <figure class="is-phone" style="--d:2"><img src="work/chessafterdark-m.jpg" alt="Chess After Dark í síma" width="585" height="1266" loading="lazy" decoding="async" /><figcaption class="mono"><b>C</b>Í síma</figcaption></figure>
+
+          <dl class="project-stats">
+              <div><dt data-count="370" data-suffix="+">370+</dt><dd class="mono">þættir</dd></div>
+              <div><dt data-count="2.5" data-dec="1" data-suffix="M+">2.5M+</dt><dd class="mono">spilanir</dd></div>
+              <div><dt data-count="1" data-suffix="M+">1M+</dt><dd class="mono">klst. hlustað</dd></div>
+          </dl>
+
+          <!-- hvert skref á sína mynd: skrefið velur hvað skjárinn sýnir -->
+          <div class="console" data-console>
+            <ol class="steps" aria-label="Chess After Dark: leið gestsins um vefinn">
+              <li><button type="button" class="step is-active" aria-pressed="true" data-label="Forsíða">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">01</span>
+                <span class="step-text"><strong>Forsíða</strong><span>Nýjasti þátturinn, hnappur til að hlusta og lykiltölurnar blasa við um leið og síðan opnast.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Flokkar">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">02</span>
+                <span class="step-text"><strong>Flokkar</strong><span>Fimm efnisflokkar með fjölda þátta í hverjum, og nýjustu þættirnir beint fyrir neðan.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Þáttasafn">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">03</span>
+                <span class="step-text"><strong>Þáttasafn</strong><span>Allir þættirnir á einum stað með leit og síum, svo gamall þáttur finnst á nokkrum sekúndum.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Þáttasíða">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">04</span>
+                <span class="step-text"><strong>Þáttasíða</strong><span>Hver þáttur á sína síðu með gesti, lengd, umræðuefnum og tenglum til að hlusta.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Í síma">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">05</span>
+                <span class="step-text"><strong>Í síma</strong><span>Sama efni, raðað upp á nýtt fyrir einn dálk og þumalinn.</span></span>
+              </button></li>
+            </ol>
+            <div class="stage">
+              <div class="stage-bar mono" aria-hidden="true">
+                <i></i><i></i><i></i>
+                <span class="stage-url">chessafterdark.is <b>/</b> <span data-label>Forsíða</span></span>
+                <span class="stage-count"><b data-idx>01</b> / 05</span>
+              </div>
+              <div class="stage-view">
+                <span class="shot is-active"><img src="work/chessafterdark.jpg" alt="Chess After Dark: Forsíða" width="1600" height="1000" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/chessafterdark-2.jpg" alt="Chess After Dark: Flokkar" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/chessafterdark-3.jpg" alt="Chess After Dark: Þáttasafn" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/chessafterdark-4.jpg" alt="Chess After Dark: Þáttasíða" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot is-phone"><img src="work/chessafterdark-m.jpg" alt="Chess After Dark: í síma" width="585" height="1266" loading="lazy" decoding="async" /></span>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -190,28 +221,64 @@
             <span class="project-sector">Lögmannsstofa</span>
             <a href="https://intralegem.is" target="_blank" rel="noopener">intralegem.is ↗</a>
           </header>
-          <div class="project-body">
-            <a class="project-shot" href="https://intralegem.is" target="_blank" rel="noopener" aria-label="Heimsækja intralegem.is">
-              <span class="frame">
-                <span class="frame-bar mono" aria-hidden="true"><i></i><i></i><i></i><em>intralegem.is</em></span>
-                <img src="work/intralegem.jpg" alt="Forsíða Intra Legem — vefur hannaður og smíðaður af Briem" width="1600" height="1000" loading="lazy" decoding="async" />
-              </span>
-            </a>
-            <div class="project-detail">
-              <h3>Intra Legem</h3>
-              <p>Vefur fyrir lögmannsstofu Hallmundar Albertssonar. Rólegt og vandað yfirbragð sem byggir upp traust áður en fyrsta samtalið er bókað.</p>
-            <ul class="project-notes">
-              <li>Á íslensku og ensku</li>
-              <li>Sjö starfssvið, hvert með dæmum um verkefni</li>
-              <li>Ferill, skrif og bókun á samtali á einni síðu</li>
-            </ul>
+
+          <div class="project-intro">
+            <h3>Intra Legem</h3>
+            <div class="project-summary">
+              <p>Lögmannsstofa Hallmundar Albertssonar selur traust. Vefurinn er því rólegur og vandaður, á íslensku og ensku, og hvert skref færir gestinn nær fyrsta samtalinu.</p>
               <a class="btn btn-ghost" href="https://intralegem.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
-          <div class="project-gallery">
-            <figure style="--d:0"><img src="work/intralegem-2.jpg" alt="Intra Legem: Starfssvið" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>A</b>Starfssvið</figcaption></figure>
-            <figure style="--d:1"><img src="work/intralegem-3.jpg" alt="Intra Legem: Lögmaðurinn" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>B</b>Lögmaðurinn</figcaption></figure>
-            <figure class="is-phone" style="--d:2"><img src="work/intralegem-m.jpg" alt="Intra Legem í síma" width="585" height="1266" loading="lazy" decoding="async" /><figcaption class="mono"><b>C</b>Í síma</figcaption></figure>
+
+          <dl class="project-stats">
+              <div><dt data-count="7" data-suffix="">7</dt><dd class="mono">starfssvið</dd></div>
+              <div><dt data-count="2" data-suffix="">2</dt><dd class="mono">tungumál</dd></div>
+              <div><dt data-count="1" data-suffix="">1</dt><dd class="mono">síða, engar krókaleiðir</dd></div>
+          </dl>
+
+          <!-- hvert skref á sína mynd: skrefið velur hvað skjárinn sýnir -->
+          <div class="console" data-console>
+            <ol class="steps" aria-label="Intra Legem: leið gestsins um vefinn">
+              <li><button type="button" class="step is-active" aria-pressed="true" data-label="Forsíða">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">01</span>
+                <span class="step-text"><strong>Forsíða</strong><span>Kyrrlát opnun með einni skýrri aðgerð: að bóka samtal.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Starfssvið">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">02</span>
+                <span class="step-text"><strong>Starfssvið</strong><span>Sjö svið í lista. Smellt er á svið og dæmi um verkefni birtast við hliðina.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Ferill">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">03</span>
+                <span class="step-text"><strong>Ferill</strong><span>Aldarfjórðungur af reynslu teiknaður á tímalínu í stað langrar ferilskrár.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Samband">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">04</span>
+                <span class="step-text"><strong>Samband</strong><span>Stutt fyrirspurnarform þar sem starfssviðið er valið, með síma og heimilisfangi við hliðina.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Í síma">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">05</span>
+                <span class="step-text"><strong>Í síma</strong><span>Sama yfirbragð í einum dálki, með bókun og símanúmer innan seilingar.</span></span>
+              </button></li>
+            </ol>
+            <div class="stage">
+              <div class="stage-bar mono" aria-hidden="true">
+                <i></i><i></i><i></i>
+                <span class="stage-url">intralegem.is <b>/</b> <span data-label>Forsíða</span></span>
+                <span class="stage-count"><b data-idx>01</b> / 05</span>
+              </div>
+              <div class="stage-view">
+                <span class="shot is-active"><img src="work/intralegem.jpg" alt="Intra Legem: Forsíða" width="1600" height="1000" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/intralegem-2.jpg" alt="Intra Legem: Starfssvið" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/intralegem-3.jpg" alt="Intra Legem: Ferill" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/intralegem-4.jpg" alt="Intra Legem: Samband" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot is-phone"><img src="work/intralegem-m.jpg" alt="Intra Legem: í síma" width="585" height="1266" loading="lazy" decoding="async" /></span>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -222,33 +289,64 @@
             <span class="project-sector">Íþróttahlaðvarp</span>
             <a href="https://betkastid.is" target="_blank" rel="noopener">betkastid.is ↗</a>
           </header>
-          <div class="project-body">
-            <a class="project-shot" href="https://betkastid.is" target="_blank" rel="noopener" aria-label="Heimsækja betkastid.is">
-              <span class="frame">
-                <span class="frame-bar mono" aria-hidden="true"><i></i><i></i><i></i><em>betkastid.is</em></span>
-                <img src="work/betkastid.jpg" alt="Forsíða Betkastið — vefur hannaður og smíðaður af Briem" width="1600" height="1000" loading="lazy" decoding="async" />
-              </span>
-            </a>
-            <div class="project-detail">
-              <h3>Betkastið</h3>
-              <p>Vefsíða fyrir eitt vinsælasta íþróttahlaðvarp landsins, hönnuð og smíðuð frá grunni með áherslu á skýra framsetningu og trausta notendaupplifun.</p>
-            <dl class="project-stats">
-              <div><dt data-count="200" data-suffix="K">200K</dt><dd class="mono">hlustanir</dd></div>
-              <div><dt data-count="100" data-suffix="+">100+</dt><dd class="mono">þættir</dd></div>
-              <div><dt data-count="1.8" data-dec="1" data-suffix="M">1.8M</dt><dd class="mono">áhorf á TikTok</dd></div>
-            </dl>
-            <ul class="project-notes">
-              <li>Klippusöfn tengd beint við samfélagsmiðla</li>
-              <li>Innbyggður spilari fyrir hlustun beint á vefnum</li>
-              <li>Síuð leit eftir íþróttagreinum</li>
-            </ul>
+
+          <div class="project-intro">
+            <h3>Betkastið</h3>
+            <div class="project-summary">
+              <p>Eitt vinsælasta íþróttahlaðvarp landsins vildi vef með sama tón og þættirnir: stuðlar, spár og stemning. Hannaður og smíðaður frá grunni.</p>
               <a class="btn btn-ghost" href="https://betkastid.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
-          <div class="project-gallery">
-            <figure style="--d:0"><img src="work/betkastid-2.jpg" alt="Betkastið: Allir þættir" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>A</b>Allir þættir</figcaption></figure>
-            <figure style="--d:1"><img src="work/betkastid-3.jpg" alt="Betkastið: Flokkar eftir íþróttagreinum" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>B</b>Flokkar eftir íþróttagreinum</figcaption></figure>
-            <figure class="is-phone" style="--d:2"><img src="work/betkastid-m.jpg" alt="Betkastið í síma" width="585" height="1266" loading="lazy" decoding="async" /><figcaption class="mono"><b>C</b>Í síma</figcaption></figure>
+
+          <dl class="project-stats">
+              <div><dt data-count="200" data-suffix="K">200K</dt><dd class="mono">hlustanir</dd></div>
+              <div><dt data-count="100" data-suffix="+">100+</dt><dd class="mono">þættir</dd></div>
+              <div><dt data-count="1.8" data-dec="1" data-suffix="M">1.8M</dt><dd class="mono">áhorf á TikTok</dd></div>
+          </dl>
+
+          <!-- hvert skref á sína mynd: skrefið velur hvað skjárinn sýnir -->
+          <div class="console" data-console>
+            <ol class="steps" aria-label="Betkastið: leið gestsins um vefinn">
+              <li><button type="button" class="step is-active" aria-pressed="true" data-label="Forsíða">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">01</span>
+                <span class="step-text"><strong>Forsíða</strong><span>Stuðlaborði og lykiltölur gefa tóninn strax, með nýjasta þáttinn einum smelli frá.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Klippur">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">02</span>
+                <span class="step-text"><strong>Klippur</strong><span>Bestu mómentin spilast beint á forsíðunni og hver klippa tengist Instagram.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Flokkar">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">03</span>
+                <span class="step-text"><strong>Flokkar</strong><span>Sex flokkar eftir íþróttagreinum. Einn smellur síar allt þáttasafnið.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Þáttasafn">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">04</span>
+                <span class="step-text"><strong>Þáttasafn</strong><span>Allir þættirnir með leit, síu eftir flokki og röðun.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Í síma">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">05</span>
+                <span class="step-text"><strong>Í síma</strong><span>Sami græni tónninn og sömu aðgerðir, lagað að síma.</span></span>
+              </button></li>
+            </ol>
+            <div class="stage">
+              <div class="stage-bar mono" aria-hidden="true">
+                <i></i><i></i><i></i>
+                <span class="stage-url">betkastid.is <b>/</b> <span data-label>Forsíða</span></span>
+                <span class="stage-count"><b data-idx>01</b> / 05</span>
+              </div>
+              <div class="stage-view">
+                <span class="shot is-active"><img src="work/betkastid.jpg" alt="Betkastið: Forsíða" width="1600" height="1000" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/betkastid-2.jpg" alt="Betkastið: Klippur" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/betkastid-3.jpg" alt="Betkastið: Flokkar" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/betkastid-4.jpg" alt="Betkastið: Þáttasafn" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot is-phone"><img src="work/betkastid-m.jpg" alt="Betkastið: í síma" width="585" height="1266" loading="lazy" decoding="async" /></span>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -259,28 +357,64 @@
             <span class="project-sector">Ferðaþjónusta</span>
             <a href="https://bellaitalia.is" target="_blank" rel="noopener">bellaitalia.is ↗</a>
           </header>
-          <div class="project-body">
-            <a class="project-shot" href="https://bellaitalia.is" target="_blank" rel="noopener" aria-label="Heimsækja bellaitalia.is">
-              <span class="frame">
-                <span class="frame-bar mono" aria-hidden="true"><i></i><i></i><i></i><em>bellaitalia.is</em></span>
-                <img src="work/bellaitalia.jpg" alt="Forsíða Bella Italia — vefur hannaður og smíðaður af Briem" width="1600" height="1000" loading="lazy" decoding="async" />
-              </span>
-            </a>
-            <div class="project-detail">
-              <h3>Bella Italia</h3>
-              <p>Nýr vefur fyrir ferðaþjónustu sem leigir út villur með sundlaug og skipuleggur borgarferðir um alla Ítalíu. Stórar myndir selja ferðina og tilboð er aldrei meira en einn smell í burtu.</p>
-            <ul class="project-notes">
-              <li>Villur og fimm borgir, hver með sína síðu</li>
-              <li>Umsagnir gesta í forgrunni</li>
-              <li>Fyrirspurnarform fyrir tilboð í villu</li>
-            </ul>
+
+          <div class="project-intro">
+            <h3>Bella Italia</h3>
+            <div class="project-summary">
+              <p>Ferðaþjónusta sem leigir út villur með sundlaug og skipuleggur borgarferðir um Ítalíu. Stórar myndir selja ferðina og leiðin að tilboði er alltaf stutt.</p>
               <a class="btn btn-ghost" href="https://bellaitalia.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
-          <div class="project-gallery">
-            <figure style="--d:0"><img src="work/bellaitalia-2.jpg" alt="Bella Italia: Villur" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>A</b>Villur</figcaption></figure>
-            <figure style="--d:1"><img src="work/bellaitalia-3.jpg" alt="Bella Italia: Róm" width="1200" height="750" loading="lazy" decoding="async" /><figcaption class="mono"><b>B</b>Róm</figcaption></figure>
-            <figure class="is-phone" style="--d:2"><img src="work/bellaitalia-m.jpg" alt="Bella Italia í síma" width="585" height="1266" loading="lazy" decoding="async" /><figcaption class="mono"><b>C</b>Í síma</figcaption></figure>
+
+          <dl class="project-stats">
+              <div><dt data-count="5" data-suffix="">5</dt><dd class="mono">borgir</dd></div>
+              <div><dt data-count="14" data-suffix="">14</dt><dd class="mono">héruð í boði</dd></div>
+              <div><dt data-count="6" data-suffix="">6</dt><dd class="mono">umsagnir gesta</dd></div>
+          </dl>
+
+          <!-- hvert skref á sína mynd: skrefið velur hvað skjárinn sýnir -->
+          <div class="console" data-console>
+            <ol class="steps" aria-label="Bella Italia: leið gestsins um vefinn">
+              <li><button type="button" class="step is-active" aria-pressed="true" data-label="Forsíða">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">01</span>
+                <span class="step-text"><strong>Forsíða</strong><span>Gesturinn velur strax á milli tveggja leiða: villur eða borgir.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Villur">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">02</span>
+                <span class="step-text"><strong>Villur</strong><span>Villur með sundlaug í öllum verðflokkum, með tilboðshnapp sem fylgir alla leið niður.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Borgir">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">03</span>
+                <span class="step-text"><strong>Borgir</strong><span>Róm, Flórens, Napoli, Feneyjar og Sikiley, hver borg með sína síðu.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Fyrirspurn">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">04</span>
+                <span class="step-text"><strong>Fyrirspurn</strong><span>Formið spyr um dagsetningar, fjölda gesta og héruð, svo fyrsta tilboð hitti í mark.</span></span>
+              </button></li>
+              <li><button type="button" class="step" aria-pressed="false" data-label="Í síma">
+                <i class="fill" aria-hidden="true"></i>
+                <span class="step-num mono">05</span>
+                <span class="step-text"><strong>Í síma</strong><span>Myndirnar halda sér og valmyndin fellur saman, lagað að síma.</span></span>
+              </button></li>
+            </ol>
+            <div class="stage">
+              <div class="stage-bar mono" aria-hidden="true">
+                <i></i><i></i><i></i>
+                <span class="stage-url">bellaitalia.is <b>/</b> <span data-label>Forsíða</span></span>
+                <span class="stage-count"><b data-idx>01</b> / 05</span>
+              </div>
+              <div class="stage-view">
+                <span class="shot is-active"><img src="work/bellaitalia.jpg" alt="Bella Italia: Forsíða" width="1600" height="1000" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/bellaitalia-2.jpg" alt="Bella Italia: Villur" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/bellaitalia-3.jpg" alt="Bella Italia: Borgir" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot"><img src="work/bellaitalia-4.jpg" alt="Bella Italia: Fyrirspurn" width="1200" height="750" loading="lazy" decoding="async" /></span>
+                <span class="shot is-phone"><img src="work/bellaitalia-m.jpg" alt="Bella Italia: í síma" width="585" height="1266" loading="lazy" decoding="async" /></span>
+              </div>
+            </div>
           </div>
         </article>
       </div>
