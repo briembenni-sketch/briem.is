@@ -19,6 +19,7 @@
 
   --accent:      #5B8CFF;  /* texti, caret, áherslur */
   --accent-fill: #2757CF;  /* fylling með hvítum texta (AA) */
+  --ok:          #4ADE80;
 
   /* --c er litur verksins sem er í fókus; sjálfgefið vörumerkisblár */
   --c: var(--accent);
@@ -165,18 +166,18 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   overflow: hidden;
   border-bottom: 1px solid var(--line);
 }
-.hero-field {
+.field {
   position: absolute; inset: 0; z-index: -1;
   width: 100%; height: 100%;
 }
 .hero-inner {
   display: grid; gap: clamp(2.5rem, 7vw, 4rem); align-items: center;
-  padding-block: clamp(2.25rem, 7vh, 5rem) clamp(3rem, 9vh, 6rem);
+  padding-block: clamp(2rem, 7vh, 5rem) clamp(2.5rem, 8vh, 5rem);
 }
 @media (min-width: 900px) {
   .hero-inner {
     grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-    min-height: calc(100svh - var(--header-h) - 132px);
+    min-height: calc(100svh - var(--header-h) - 46px);
   }
 }
 
@@ -242,12 +243,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hslide img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .hslide.is-prev { visibility: visible; z-index: 1; }
 .hslide.is-active { visibility: visible; z-index: 2; }
-.js .hslide.is-active { animation: rise 0.75s var(--ease) both; }
+.js .hslide.is-active { animation: rise 0.5s var(--ease) both; }
 @keyframes rise { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
 
 @media (max-width: 899px) {
-  .showcase { padding: 2% 2% 12% 15%; }
-  .showcase-rig { transform: rotateY(-11deg) rotateX(6deg); }
+  .showcase { padding: 3% 1% 14% 14%; }
+  .showcase-rig { transform: rotateY(-13deg) rotateX(7deg); }
+  .handset { width: 25%; left: -13%; bottom: -15%; }
   .ghost--1 { transform: translate3d(3%, -5%, -60px); }
   .ghost--2 { transform: translate3d(6%, -10%, -120px); }
 }
@@ -266,52 +268,25 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .slide img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .slide.is-prev { visibility: visible; z-index: 1; }
 .slide.is-active { visibility: visible; z-index: 2; }
-.js .slide.is-active { animation: wipe 0.75s var(--ease) both; }
+.js .slide.is-active { animation: wipe 0.5s var(--ease) both; }
 @keyframes wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 
-.viewer-tabs { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-inline: 1px solid var(--line); background: var(--bg); }
-html:not(.js) .viewer-tabs { display: none; }
-.viewer-tab {
-  position: relative;
-  display: flex; flex-direction: column; gap: 0.2rem;
-  padding: 0.8rem 0.9rem 0.85rem;
-  text-align: left;
-  color: var(--muted);
-  transition: color 0.2s, background 0.2s;
-}
-.viewer-tab + .viewer-tab { border-left: 1px solid var(--line); }
-.viewer-tab:hover { color: var(--text); background: var(--bg-2); }
-.viewer-tab.is-active { color: var(--text); }
-.viewer-tab .num { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--c); }
-.viewer-tab .name { font-size: 0.86rem; font-weight: 600; line-height: 1.2; }
-.viewer-tab .fill {
-  position: absolute; top: -1px; left: 0; right: 0; height: 2px;
-  background: var(--c);
-  transform: scaleX(0); transform-origin: left;
-}
-.viewer-tab.is-active .fill { animation: fill 5.5s linear forwards; }
+/* framvindulína: tímamælirinn að næsta vef */
+.viewer-progress { display: block; height: 2px; background: var(--line); }
+.viewer-progress .fill { display: block; height: 100%; background: var(--c); transform: scaleX(0); transform-origin: left; }
+.js .viewer-progress .fill { animation: fill 2.6s linear both; }
 @keyframes fill { to { transform: scaleX(1); } }
-@media (hover: hover) { .hero:has(.viewer:hover, .viewer-tabs:hover) .viewer-tab .fill { animation-play-state: paused; } }
-@media (max-width: 559px) {
-  .viewer-tab { padding: 0.75rem 0.6rem; }
-  .viewer-tab .name { font-size: 0.72rem; }
-}
+@media (hover: hover) { .viewer:hover .viewer-progress .fill { animation-play-state: paused; } }
 @media (prefers-reduced-motion: reduce) {
-  .viewer-tab.is-active .fill { animation: none; transform: scaleX(1); }
+  .js .viewer-progress .fill { animation: none; }
   .js .slide.is-active, .js .hslide.is-active { animation: none; }
 }
 
-/* ---------- lén á hlaupum ---------- */
-.marquee { border-top: 1px solid var(--line); background: var(--bg); overflow: hidden; }
-.marquee-track { display: flex; width: max-content; animation: marquee 36s linear infinite; }
-.marquee span {
-  display: inline-flex; align-items: center; gap: 0.8rem;
-  padding: 1rem 1.6rem;
-  font-size: 0.8rem; color: var(--text);
-}
-.marquee i { width: 7px; height: 7px; background: var(--c); }
-@keyframes marquee { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+/* mælaborðslína neðst í hero */
+.hero-hud { display: flex; justify-content: space-between; align-items: center; padding-block: 0.9rem; border-top: 1px solid var(--line); font-size: 0.66rem; }
+.hero-hud b { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; }
+.hud-scroll { margin-left: auto; }
+@media (hover: none) { .hud-xy { display: none; } }
 
 /* =========================================================
    SECTIONS
@@ -460,6 +435,75 @@ h2 {
 
 
 /* =========================================================
+   UNDIR HÚDDINU — lifandi mæling + þrjú loforð
+   ========================================================= */
+.engine { border-top: 1px solid var(--line); background: var(--bg-2); }
+.engine-grid { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (min-width: 900px) { .engine-grid { grid-template-columns: 1.1fr 0.9fr; } }
+
+.term { position: relative; border: 1px solid var(--line-2); background: var(--bg); }
+.term::before, .term::after {
+  content: ""; position: absolute; width: 16px; height: 16px; pointer-events: none;
+  border: 2px solid var(--accent);
+}
+.term::before { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
+.term::after { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
+.term-bar { display: flex; align-items: center; gap: 6px; padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--line); font-size: 0.66rem; }
+.term-bar i { width: 8px; height: 8px; background: var(--line-2); }
+.term-bar span { margin-left: 0.6rem; }
+.term-body {
+  min-height: 17.5em;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  font-size: clamp(0.74rem, 1.9vw, 0.86rem); line-height: 2.05;
+  text-transform: none; letter-spacing: 0.01em;
+  color: var(--muted);
+}
+.term-body .cmd { color: var(--text); }
+.term-body .cmd::before { content: "$ "; color: var(--accent); }
+.term-body .row { display: flex; align-items: baseline; gap: 0.6em; }
+.term-body .row i { flex: 1; min-width: 1em; border-bottom: 1px dotted var(--line-2); transform: translateY(-0.35em); }
+.term-body .row b { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.term-body .ok { color: var(--ok); margin-top: 0.4em; }
+.term-body .caret { width: 0.55em; height: 1.05em; vertical-align: -0.18em; margin-left: 0.25em; }
+
+.principles { border-top: 1px solid var(--line-2); }
+.principles li { display: grid; grid-template-columns: 2.4rem 1fr; padding-block: 1.4rem; border-bottom: 1px solid var(--line); }
+.principles .mono { padding-top: 0.35rem; color: var(--accent); }
+.principles h3 { font-family: var(--display); font-stretch: 112%; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; line-height: 1.1; }
+.principles p { margin-top: 0.5rem; color: var(--muted); font-size: 0.98rem; max-width: 44ch; }
+
+/* =========================================================
+   FERLIÐ — lína sem fyllist við skroll
+   ========================================================= */
+.pipe { position: relative; display: grid; gap: 2.25rem; padding-left: 2rem; }
+.pipe-track { position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--line-2); }
+.pipe-track i { position: absolute; inset: 0; background: var(--accent); transform: scaleY(var(--p, 1)); transform-origin: top; }
+.pipe-step { position: relative; }
+.pipe-step .node {
+  position: absolute; left: calc(-2rem + 0px); top: 3px; width: 11px; height: 11px;
+  border: 1px solid var(--line-2); background: var(--bg);
+  transition: background 0.3s, border-color 0.3s, transform 0.3s var(--ease);
+}
+.pipe-step.on .node { background: var(--accent); border-color: var(--accent); transform: rotate(45deg); }
+.pipe-step .mono { color: var(--muted-2); transition: color 0.3s; }
+.pipe-step.on .mono { color: var(--accent); }
+.pipe-step h3 {
+  margin-top: 0.5rem;
+  font-family: var(--display); font-stretch: 112%; font-weight: 800;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -0.025em; line-height: 1.05;
+  color: var(--muted); transition: color 0.3s;
+}
+.pipe-step.on h3 { color: var(--text); }
+.pipe-step p { margin-top: 0.6rem; color: var(--muted); font-size: 0.97rem; max-width: 40ch; }
+html:not(.js) .pipe-step h3 { color: var(--text); }
+@media (min-width: 900px) {
+  .pipe { grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-left: 0; padding-top: 2.4rem; }
+  .pipe-track { left: 0; right: 0; top: 5px; bottom: auto; width: auto; height: 1px; }
+  .pipe-track i { transform: scaleX(var(--p, 1)); transform-origin: left; }
+  .pipe-step .node { left: 0; top: -2.4rem; }
+}
+
+/* =========================================================
    TESTIMONIAL
    ========================================================= */
 .quote-section { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); }
@@ -477,6 +521,7 @@ h2 {
 /* =========================================================
    CONTACT
    ========================================================= */
+.contact { position: relative; isolation: isolate; overflow: hidden; }
 .contact-title {
   font-stretch: 125%;
   text-transform: uppercase;
@@ -492,6 +537,27 @@ h2 {
 .site-footer { border-top: 1px solid var(--line); padding-block: 1.5rem; }
 .footer-inner { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; }
 .footer-nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+
+/* =========================================================
+   HLIÐARLEIÐSÖGN
+   ========================================================= */
+.rail { display: none; }
+@media (min-width: 1100px) and (hover: hover) {
+  .rail {
+    position: fixed; right: 8px; top: 50%; z-index: 90;
+    transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 0.2rem;
+    font-size: 0.62rem;
+  }
+  .rail a { position: relative; display: flex; align-items: center; justify-content: flex-end; gap: 6px; padding: 0.3rem 0; color: var(--muted-2); transition: color 0.2s; }
+  .rail a::after { content: ""; width: 6px; height: 1px; background: currentColor; transition: width 0.25s var(--ease); }
+  .rail span { position: absolute; right: 100%; margin-right: 8px; white-space: nowrap; opacity: 0; transform: translateX(6px); transition: opacity 0.2s, transform 0.2s; background: var(--bg); border: 1px solid var(--line-2); padding: 0.2rem 0.5rem; pointer-events: none; }
+  .rail b { font-weight: 500; }
+  .rail a:hover, .rail a.is-current { color: var(--text); }
+  .rail a:hover span { opacity: 1; transform: none; }
+  .rail a.is-current { color: var(--accent); }
+  .rail a.is-current::after { width: 14px; }
+}
 
 /* =========================================================
    REVEAL — síðan er alltaf sýnileg án JS

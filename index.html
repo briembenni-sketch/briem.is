@@ -62,6 +62,7 @@
       </a>
       <nav class="header-nav mono" aria-label="Aðalvalmynd">
         <a href="#work">Verk</a>
+        <a href="#process">Ferlið</a>
         <a href="#contact">Samband</a>
       </nav>
       <div class="header-contact">
@@ -77,11 +78,21 @@
     </div>
   </header>
 
+  <!-- hliðarleiðsögn: sýnir hvar á síðunni þú ert -->
+  <nav class="rail mono" aria-label="Kaflar">
+    <a href="#hero"><b>00</b><span>Efst</span></a>
+    <a href="#work"><b>01</b><span>Verk</span></a>
+    <a href="#engine"><b>02</b><span>Undir húddinu</span></a>
+    <a href="#process"><b>03</b><span>Ferlið</span></a>
+    <a href="#quote"><b>04</b><span>Ummæli</span></a>
+    <a href="#contact"><b>05</b><span>Samband</span></a>
+  </nav>
+
   <main>
     <!-- ============ HERO ============ -->
-    <section class="hero" data-viewer>
+    <section class="hero" id="hero" data-viewer>
       <!-- gagnvirkt punktanet: bregst við bendli og sendir frá sér bylgjur -->
-      <canvas class="hero-field" aria-hidden="true"></canvas>
+      <canvas class="field" aria-hidden="true"></canvas>
 
       <div class="wrap hero-inner">
         <div class="hero-copy">
@@ -112,6 +123,7 @@
                 <span><b data-viewer-index>01</b> / 04</span>
                 <span class="viewer-domain"><i aria-hidden="true"></i><span data-viewer-domain>chessafterdark.is</span></span>
               </div>
+              <i class="viewer-progress" aria-hidden="true"><i class="fill"></i></i>
               <div class="viewer-stage">
               <a class="slide is-active" href="https://chessafterdark.is" target="_blank" rel="noopener" data-domain="chessafterdark.is" data-c="#5B8CFF" aria-label="Heimsækja chessafterdark.is">
                 <img src="work/chessafterdark.jpg" alt="Forsíða Chess After Dark — vefur hannaður og smíðaður af Briem" width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async" />
@@ -137,17 +149,9 @@
         </div>
       </div>
 
-      <div class="wrap">
-        <div class="viewer-tabs" role="group" aria-label="Velja verk">
-              <button type="button" class="viewer-tab is-active" aria-pressed="true" style="--c:#5B8CFF"><i class="fill" aria-hidden="true"></i><span class="num">01</span><span class="name">Chess After Dark</span></button>
-              <button type="button" class="viewer-tab" aria-pressed="false" style="--c:#D9B36C"><i class="fill" aria-hidden="true"></i><span class="num">02</span><span class="name">Intra Legem</span></button>
-              <button type="button" class="viewer-tab" aria-pressed="false" style="--c:#4ADE80"><i class="fill" aria-hidden="true"></i><span class="num">03</span><span class="name">Betkastið</span></button>
-              <button type="button" class="viewer-tab" aria-pressed="false" style="--c:#F87171"><i class="fill" aria-hidden="true"></i><span class="num">04</span><span class="name">Bella Italia</span></button>
-            </div>
-      </div>
-
-      <div class="marquee mono" aria-hidden="true">
-        <div class="marquee-track"><span style="--c:#5B8CFF"><i></i>chessafterdark.is</span><span style="--c:#D9B36C"><i></i>intralegem.is</span><span style="--c:#4ADE80"><i></i>betkastid.is</span><span style="--c:#F87171"><i></i>bellaitalia.is</span><span style="--c:#5B8CFF"><i></i>chessafterdark.is</span><span style="--c:#D9B36C"><i></i>intralegem.is</span><span style="--c:#4ADE80"><i></i>betkastid.is</span><span style="--c:#F87171"><i></i>bellaitalia.is</span><span style="--c:#5B8CFF"><i></i>chessafterdark.is</span><span style="--c:#D9B36C"><i></i>intralegem.is</span><span style="--c:#4ADE80"><i></i>betkastid.is</span><span style="--c:#F87171"><i></i>bellaitalia.is</span><span style="--c:#5B8CFF"><i></i>chessafterdark.is</span><span style="--c:#D9B36C"><i></i>intralegem.is</span><span style="--c:#4ADE80"><i></i>betkastid.is</span><span style="--c:#F87171"><i></i>bellaitalia.is</span></div>
+      <div class="wrap hero-hud mono" aria-hidden="true">
+        <span class="hud-xy">X <b data-hud-x>0000</b> &nbsp;Y <b data-hud-y>0000</b></span>
+        <span class="hud-scroll">Skrolla ↓</span>
       </div>
     </section>
 
@@ -155,7 +159,7 @@
     <section class="section" id="work">
       <div class="wrap">
         <header class="section-head reveal">
-          <p class="mono section-label"><span class="idx">01</span> / Valin verk</p>
+          <p class="mono section-label"><span class="idx">01</span> / <span data-scramble>Valin verk</span></p>
           <h2>Vefir sem tala sínu máli.</h2>
           <p class="section-lede">
             Hlaðvörp, lögmannsstofa og ferðaþjónusta. Ólíkur rekstur, sama krafan:
@@ -172,7 +176,7 @@
           </header>
 
           <div class="project-intro">
-            <h3>Chess After Dark</h3>
+            <h3 data-scramble>Chess After Dark</h3>
             <div class="project-summary">
               <p>Eitt stærsta hlaðvarp landsins þurfti heimili fyrir hundruð þátta. Vefurinn leiðir gestinn frá nýjasta þættinum, í gegnum safnið og alla leið að þættinum sem hann leitar að.</p>
               <a class="btn btn-ghost" href="https://chessafterdark.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -240,7 +244,7 @@
           </header>
 
           <div class="project-intro">
-            <h3>Intra Legem</h3>
+            <h3 data-scramble>Intra Legem</h3>
             <div class="project-summary">
               <p>Lögmannsstofa Hallmundar Albertssonar selur traust. Vefurinn er því rólegur og vandaður, á íslensku og ensku, og hvert skref færir gestinn nær fyrsta samtalinu.</p>
               <a class="btn btn-ghost" href="https://intralegem.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -308,7 +312,7 @@
           </header>
 
           <div class="project-intro">
-            <h3>Betkastið</h3>
+            <h3 data-scramble>Betkastið</h3>
             <div class="project-summary">
               <p>Eitt vinsælasta íþróttahlaðvarp landsins vildi vef með sama tón og þættirnir: stuðlar, spár og stemning. Hannaður og smíðaður frá grunni.</p>
               <a class="btn btn-ghost" href="https://betkastid.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -376,7 +380,7 @@
           </header>
 
           <div class="project-intro">
-            <h3>Bella Italia</h3>
+            <h3 data-scramble>Bella Italia</h3>
             <div class="project-summary">
               <p>Ferðaþjónusta sem leigir út villur með sundlaug og skipuleggur borgarferðir um Ítalíu. Stórar myndir selja ferðina og leiðin að tilboði er alltaf stutt.</p>
               <a class="btn btn-ghost" href="https://bellaitalia.is" target="_blank" rel="noopener">Skoða vefinn <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -437,10 +441,69 @@
       </div>
     </section>
 
-    <!-- ============ TESTIMONIAL ============ -->
-    <section class="section quote-section" aria-label="Ummæli viðskiptavinar">
+    <!-- ============ UNDIR HÚDDINU ============ -->
+    <section class="section engine" id="engine">
       <div class="wrap">
-        <p class="mono section-label reveal"><span class="idx">02</span> / Ummæli</p>
+        <header class="section-head reveal">
+          <p class="mono section-label"><span class="idx">02</span> / <span data-scramble>Undir húddinu</span></p>
+          <h2>Þessi síða er sýnidæmið.</h2>
+          <p class="section-lede">
+            Við handskrifum hraðan kóða sem stenst mælingar. Tölurnar hér eru ekki af glæru:
+            þær eru mældar í þínum vafra, rétt í þessu.
+          </p>
+        </header>
+
+        <div class="engine-grid">
+          <!-- raunveruleg mæling úr Performance API vafrans -->
+          <div class="term reveal" data-term>
+            <div class="term-bar mono" aria-hidden="true"><i></i><i></i><i></i><span>briem / mæling</span></div>
+            <div class="term-body mono" role="status">
+              <noscript>Mælingin keyrir í vafranum þínum og þarf JavaScript.</noscript>
+            </div>
+          </div>
+
+          <ul class="principles">
+            <li class="reveal" style="--d:1">
+              <span class="mono">A</span>
+              <div><h3>Hraði</h3><p>Léttur, handskrifaður kóði án þungra forritasafna. Mælingin hér til hliðar er af síðunni sem þú ert á.</p></div>
+            </li>
+            <li class="reveal" style="--d:2">
+              <span class="mono">B</span>
+              <div><h3>Öll tæki</h3><p>Hver vefur er prófaður á öllum skjástærðum. Síðasta skrefið í hverju verki hér að ofan sýnir hann í síma.</p></div>
+            </li>
+            <li class="reveal" style="--d:3">
+              <span class="mono">C</span>
+              <div><h3>Umsjón</h3><p>Við erum á staðnum eftir opnun, með lagfæringar og uppfærslur sem halda öllu í toppstandi.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FERLIÐ ============ -->
+    <section class="section process" id="process">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="mono section-label"><span class="idx">03</span> / <span data-scramble>Ferlið</span></p>
+          <h2>Fjögur skref, ekkert vesen.</h2>
+          <p class="section-lede">Einfalt vinnulag sem heldur hlutunum á hreyfingu og þér með í ráðum.</p>
+        </header>
+
+        <!-- línan fyllist eftir því sem skrollað er -->
+        <ol class="pipe" data-pipe>
+          <li class="pipe-track" aria-hidden="true"><i></i></li>
+          <li class="pipe-step"><i class="node" aria-hidden="true"></i><span class="mono">01</span><h3>Spjall</h3><p>Við setjumst niður, í eigin persónu eða í símtali, og finnum út hvað vefsíðan þarf raunverulega að gera fyrir fyrirtækið þitt.</p></li>
+          <li class="pipe-step"><i class="node" aria-hidden="true"></i><span class="mono">02</span><h3>Hönnun</h3><p>Við mótum útlit sem lítur út eins og þú og enginn annar, og fínpússum það saman þar til það smellur.</p></li>
+          <li class="pipe-step"><i class="node" aria-hidden="true"></i><span class="mono">03</span><h3>Smíði</h3><p>Við handskrifum vefinn svo hann sé hraður, aðgengilegur og auðveldur í rekstri, prófaður á öllum skjástærðum.</p></li>
+          <li class="pipe-step"><i class="node" aria-hidden="true"></i><span class="mono">04</span><h3>Opnun</h3><p>Við förum í loftið, setjum upp hýsingu og erum á staðnum fyrir lagfæringarnar sem fylgja.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL ============ -->
+    <section class="section quote-section" id="quote" aria-label="Ummæli viðskiptavinar">
+      <div class="wrap">
+        <p class="mono section-label reveal"><span class="idx">04</span> / <span data-scramble>Ummæli</span></p>
         <figure class="testimonial reveal">
           <blockquote>
             <p>„Við þurftum vef sem héldi utan um hundruð þátta án þess að flækjast fyrir hlustendum. Briem skilaði nákvæmlega því. Vefurinn er hraður, lítur vel út og við þurfum aldrei að hugsa um hann.“</p>
@@ -455,9 +518,10 @@
 
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contact">
+      <canvas class="field" aria-hidden="true"></canvas>
       <div class="wrap">
         <div class="contact-inner reveal">
-          <p class="mono section-label"><span class="idx">03</span> / Höfum samband</p>
+          <p class="mono section-label"><span class="idx">05</span> / <span data-scramble>Höfum samband</span></p>
           <h2 class="contact-title">
             Áttu fyrirtæki sem á skilið <span class="accent">betri vefsíðu</span><span class="caret" aria-hidden="true"></span>
           </h2>

@@ -16,9 +16,11 @@ order a visitor moves through the site (front page → browse → detail → con
 A deliberately simple, dependency-free static site so it loads instantly and can
 be hosted anywhere:
 
-- `index.html` — single-page site (hero, work, testimonial, contact)
+- `index.html` — single-page site (hero, work, under the hood, process,
+  testimonial, contact)
 - `styles.css` — design system & all styling
-- `main.js` — small, vanilla interactions (dot field, project viewer, reveal)
+- `main.js` — small, vanilla interactions (dot field, showcase, consoles,
+  live measurement, process line, reveal)
 - `favicon.svg` / `og.svg` — brand mark & social share image
 
 No build step. No framework. No tracking.
@@ -42,13 +44,19 @@ What moves:
 - **Dot field** (hero canvas) — ripples travel across a grid of dots, the
   pointer lights up the dots around it, a click sends a new ripple.
 - **Hero showcase** — the four sites as a tilted 3D browser window with the
-  same site on a phone in front; it leans toward the pointer and cycles on its
-  own. The progress fill in each tab is the timer (`animationend` advances),
-  hover pauses it.
+  same site on a phone in front; it leans toward the pointer and rolls to the
+  next site every 2.6 s. The progress line in the window is the timer
+  (`animationend` advances), hover pauses it.
+- **Live measurement** (“Undir húddinu”) — a terminal that prints this visit's
+  real timings from the browser's Performance API. A value the browser does
+  not report is left out, never guessed.
+- **Process line** — fills as you scroll; each step lights up in turn.
+- **Side rail** (desktop) — shows which section is on screen.
 - **Project consoles** — in each case study a step list drives a screen: the
   active step's fill is the timer, it only runs while the project is in view,
   and it stops for good once the visitor picks a step themselves.
-- **Headline decode**, a **domain marquee** and count-up stats.
+- **Decoding text** on the headline, section labels and project names, and
+  count-up stats.
 - The blinking **caret** still closes the headline and the contact title.
 
 The site is fully visible without JavaScript and every animation respects
@@ -73,7 +81,7 @@ repository root. No configuration required.
 - **Contact email** — search for `briem@projectbriem.is` to swap it.
 - **Work** — case studies live in the `#work` section of `index.html`. Keep the
   rule: one step, one sentence, one screenshot that shows exactly that. Add a
-  new site to the hero viewer (slide + tab) and the marquee as well.
+  new site to the hero showcase as well (a `.slide` and a `.hslide`).
 - **Copy is written in Icelandic (Íslenska).** The page declares `lang="is"`.
 
 ---
