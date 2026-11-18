@@ -142,6 +142,8 @@
     var view = con.querySelector(".stage-view");
     var labelEl = con.querySelector(".stage [data-label]");
     var idxEl = con.querySelector("[data-idx]");
+    var caption = con.querySelector(".step-caption");
+    var list = con.querySelector(".steps");
     var cur = 0;
     var show = function (n) {
       var next = (n + steps.length) % steps.length;
@@ -158,6 +160,11 @@
       });
       if (labelEl) labelEl.textContent = steps[cur].dataset.label;
       if (idxEl) idxEl.textContent = pad(cur + 1, 2);
+      /* sími: lýsing virka skrefsins undir skjánum og flipinn rennur í sjónmál */
+      if (caption) caption.textContent = steps[cur].querySelector(".step-text span").textContent;
+      if (list && list.scrollWidth > list.clientWidth) {
+        list.scrollTo({ left: steps[cur].parentElement.offsetLeft - list.offsetLeft - 24, behavior: reduced ? "auto" : "smooth" });
+      }
       if (view && !reduced) {
         view.classList.remove("is-scanning");
         void view.offsetWidth;
@@ -167,9 +174,20 @@
     steps.forEach(function (s, i) {
       s.addEventListener("click", function () { con.classList.add("is-manual"); show(i); });
       s.addEventListener("animationend", function (e) {
-        if (e.animationName === "stepFill") show(cur + 1);
+        if (e.animationName.indexOf("stepFill") === 0) show(cur + 1);
       });
     });
+    /* strjúka til hliðar á skjánum til að fletta */
+    if (view) {
+      var sx = 0, sy = 0;
+      view.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+      view.addEventListener("touchend", function (e) {
+        var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+        con.classList.add("is-manual");
+        show(cur + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+    }
     if (!reduced && hasIO) {
       new IntersectionObserver(function (entries) {
         con.classList.toggle("is-live", entries[0].isIntersecting);

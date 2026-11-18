@@ -181,8 +181,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   }
 }
 
-.hero-eyebrow { display: flex; align-items: center; gap: 0.75rem; }
-.hero-eyebrow i { width: 28px; height: 2px; background: var(--accent); }
 
 .hero-title {
   font-family: var(--display);
@@ -192,7 +190,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-size: clamp(2.6rem, 12.4vw, 5.2rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
-  margin-block: clamp(1.1rem, 3vh, 1.75rem) clamp(1.4rem, 3.5vh, 2rem);
+  margin-block: 0 clamp(1.4rem, 3.5vh, 2rem);
 }
 @media (min-width: 900px) { .hero-title { font-size: clamp(2.4rem, 4.55vw, 4.5rem); } }
 .hero-title .line { display: block; white-space: nowrap; }
@@ -434,6 +432,47 @@ h2 {
 }
 
 
+/* ---------- sími: skrefin verða flipar undir skjánum ---------- */
+.step-caption { display: none; }
+@media (max-width: 899px) {
+  .project-stats > div { padding: 0.9rem 0.6rem 0.85rem 0; min-width: 0; }
+  .project-stats > div + div { padding-left: 0.75rem; }
+  .project-stats dd { font-size: 0.6rem; letter-spacing: 0.06em; }
+
+  .js .console { gap: 0; }
+  .js .stage { position: relative; top: auto; }
+  .js .steps {
+    display: flex; border-top: 0; border-bottom: 1px solid var(--line);
+    overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity;
+    margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
+    margin-top: 0.9rem;
+  }
+  .js .steps::-webkit-scrollbar { display: none; }
+  .js .steps li { flex: none; scroll-snap-align: start; }
+  .js .step {
+    display: flex; align-items: baseline; gap: 0.5rem; width: auto;
+    padding: 0.85rem 0.9rem 0.9rem; border-bottom: 0; white-space: nowrap;
+  }
+  .js .step, .js .step:hover, .js .step.is-active { background: none; }
+  .js .step-num { padding-top: 0; }
+  .js .step-text strong { font-size: 0.98rem; }
+  .js .step-text span { display: none; }
+  .js .step .fill { top: auto; right: 0; width: auto; height: 2px; transform: scaleX(0); transform-origin: left; }
+  .js .step.is-active .fill { transform: scaleX(1); }
+  .js .console.is-live:not(.is-manual) .step.is-active .fill { animation-name: stepFillX; }
+  .js .step-caption { display: block; margin-top: 1rem; min-height: 4.7em; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+
+  /* símaskotið stærra: sýnum efri hluta skjásins */
+  .shot.is-phone { align-items: flex-start; padding-top: 5%; }
+  .shot.is-phone img { height: auto; width: 42%; }
+
+  .hero-actions .btn, .contact-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .contact-actions { flex-direction: column; }
+  .hero-hud { justify-content: center; }
+  .hud-scroll { margin-left: 0; }
+}
+@keyframes stepFillX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
 /* =========================================================
    UNDIR HÚDDINU — lifandi mæling + þrjú loforð
    ========================================================= */
@@ -502,21 +541,6 @@ html:not(.js) .pipe-step h3 { color: var(--text); }
   .pipe-track i { transform: scaleX(var(--p, 1)); transform-origin: left; }
   .pipe-step .node { left: 0; top: -2.4rem; }
 }
-
-/* =========================================================
-   TESTIMONIAL
-   ========================================================= */
-.quote-section { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); }
-.testimonial { border-left: 2px solid var(--accent); padding-left: clamp(1.25rem, 4vw, 3rem); }
-.testimonial blockquote p {
-  font-family: var(--display); font-weight: 600;
-  font-size: clamp(1.35rem, 3.4vw, 2.5rem);
-  line-height: 1.22; letter-spacing: -0.02em;
-  max-width: 28ch; max-width: min(100%, 24em);
-  text-wrap: pretty;
-}
-.testimonial figcaption { margin-top: 2rem; display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
-.testimonial-name { font-weight: 700; }
 
 /* =========================================================
    CONTACT

@@ -17,7 +17,7 @@ A deliberately simple, dependency-free static site so it loads instantly and can
 be hosted anywhere:
 
 - `index.html` — single-page site (hero, work, under the hood, process,
-  testimonial, contact)
+  contact)
 - `styles.css` — design system & all styling
 - `main.js` — small, vanilla interactions (dot field, showcase, consoles,
   live measurement, process line, reveal)
@@ -54,7 +54,8 @@ What moves:
 - **Side rail** (desktop) — shows which section is on screen.
 - **Project consoles** — in each case study a step list drives a screen: the
   active step's fill is the timer, it only runs while the project is in view,
-  and it stops for good once the visitor picks a step themselves.
+  and it stops for good once the visitor picks a step themselves. On phones the
+  steps become a row of tabs under the screen and the screen can be swiped.
 - **Decoding text** on the headline, section labels and project names, and
   count-up stats.
 - The blinking **caret** still closes the headline and the contact title.
