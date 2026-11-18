@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="briem — vefsíðugerð fyrir íslensk hlaðvörp">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="briem — vefsíðugerð fyrir íslensk fyrirtæki">
   <defs>
     <radialGradient id="glow" cx="28%" cy="0%" r="80%">
       <stop offset="0%" stop-color="#2F6BFF" stop-opacity="0.45"/>
@@ -13,23 +13,22 @@
       <stop offset="1" stop-color="#1236A6"/>
     </linearGradient>
     <style>
-      .d { font-family: "Bricolage Grotesque", "Hanken Grotesk", Arial, sans-serif; font-weight: 800; }
+      .d { font-family: "Archivo", Arial, sans-serif; font-weight: 800; }
       .m { font-family: "JetBrains Mono", ui-monospace, monospace; letter-spacing: 4px; }
-      .b { font-family: "Hanken Grotesk", Arial, sans-serif; }
+      .b { font-family: "Archivo", Arial, sans-serif; }
     </style>
   </defs>
 
-  <rect width="1200" height="630" fill="#070A14"/>
+  <rect width="1200" height="630" fill="#0A0A0B"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
 
   <!-- mono eyebrow -->
-  <text x="80" y="150" class="m" font-size="22" fill="#5B8CFF">VEFSÍÐUGERÐ FYRIR ÍSLENSK HLAÐVÖRP</text>
+  <text x="80" y="150" class="m" font-size="22" fill="#5B8CFF">VEFSÍÐUGERÐ FYRIR ÍSLENSK FYRIRTÆKI</text>
 
   <!-- headline -->
   <text class="d" font-size="110" fill="#ECEEF2" letter-spacing="-3">
     <tspan x="78" y="310">Við látum</tspan>
-    <tspan x="78" y="420"><tspan fill="#38BDF8">verkið</tspan> tala</tspan>
+    <tspan x="78" y="420"><tspan fill="#5B8CFF">verkið</tspan> tala</tspan>
   </text>
 
   <!-- logo mark + wordmark bottom-left -->

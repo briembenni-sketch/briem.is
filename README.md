@@ -14,42 +14,39 @@ The `#work` section showcases live projects with real screenshots stored in
 A deliberately simple, dependency-free static site so it loads instantly and can
 be hosted anywhere:
 
-- `index.html` — single-page site (hero, work, services, process, about, contact)
+- `index.html` — single-page site (hero, work, testimonial, contact)
 - `styles.css` — design system & all styling
-- `main.js` — small, vanilla interactions (menu, scroll reveal, sticky header)
+- `main.js` — small, vanilla interactions (dot field, project viewer, reveal)
 - `favicon.svg` / `og.svg` — brand mark & social share image
 
 No build step. No framework. No tracking.
 
-## Design system — “the caret”, aurora edition
+## Design system — “the caret”, signal edition
 
-A dark, modern fintech/crypto-landing aesthetic — aurora gradient glows,
-glassmorphism, and a glassy “performance dashboard” hero mockup — rendered in a
-**blue → cyan** palette (no purple).
+A flat, near-black surface with hairline rules and **no gradient backgrounds or
+glows**. The life comes from motion and from the work itself.
 
 | Token | Value |
 | --- | --- |
-| Display type | Bricolage Grotesque |
-| Body type | Hanken Grotesk |
+| Display + body type | Archivo (variable width; headlines at 112–125%) |
 | Mono / labels | JetBrains Mono |
-| Background | `#070A14` |
-| Text | `#EAF0FB` |
-| Accent (blue) | `#5B8CFF` / `#2F6BFF` |
-| Accent (cyan) | `#38BDF8` |
-| Brand gradient | `linear-gradient(135deg, #2F6BFF, #38BDF8)` |
+| Background | `#0A0A0B` |
+| Text | `#F3F3EF` |
+| Accent | `#5B8CFF` (text) / `#2757CF` (fill) |
+| Per-project colour | `--c` on each project: blue, gold, green, red |
 
-The signature element is the blinking **caret** `▌` that trails the `briem`
-wordmark — a code/text cursor that marks every build as hand-made. The landing
-layers on:
+What moves:
 
-- an ambient **aurora** glow and a faint hero grid,
-- a gradient-bordered, glassmorphic **hero dashboard** (animated Lighthouse
-  chart + floating metric chips),
-- a market-style **ticker** and an animated **stats strip** (count-up on scroll),
-- glass **feature cards** with gradient icon tiles and a gradient **CTA band**.
+- **Dot field** (hero canvas) — ripples travel across a grid of dots, the
+  pointer lights up the dots around it, a click sends a new ripple.
+- **Project viewer** — cycles through the four sites; the progress fill in each
+  tab is the timer (`animationend` advances), hover pauses it.
+- **Headline decode**, a live **Reykjavík clock**, a **domain marquee**,
+  count-up stats and screenshots that **tilt** toward the pointer.
+- The blinking **caret** still closes the headline and the contact title.
 
-All colour pairings meet WCAG AA contrast, the site is fully visible without
-JavaScript, and every animation respects `prefers-reduced-motion`.
+The site is fully visible without JavaScript and every animation respects
+`prefers-reduced-motion`.
 
 ## Running locally
 
@@ -67,9 +64,9 @@ repository root. No configuration required.
 
 ## Editing
 
-- **Contact email** — search for `briembenni@gmail.com` to swap it (e.g. for
-  `hello@briem.is`).
-- **Work** — case studies live in the `#work` section of `index.html`.
+- **Contact email** — search for `briem@projectbriem.is` to swap it.
+- **Work** — case studies live in the `#work` section of `index.html`; add the
+  same site to the hero viewer (slide + tab) and the marquee.
 - **Copy is written in Icelandic (Íslenska).** The page declares `lang="is"`.
 
 ---
