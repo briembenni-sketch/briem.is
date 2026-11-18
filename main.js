@@ -4,7 +4,6 @@
   "use strict";
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   /* ---- current year ---- */
   var yearEl = document.getElementById("year");
@@ -99,24 +98,49 @@
     });
   }
 
-  /* ---- skjáskot hallast á eftir bendlinum ---- */
-  if (finePointer && !reduced) {
-    document.querySelectorAll(".project-shot").forEach(function (shot) {
-      shot.addEventListener("pointermove", function (e) {
-        var r = shot.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        shot.classList.add("is-tilting");
-        shot.style.setProperty("--ry", (x * 6).toFixed(2) + "deg");
-        shot.style.setProperty("--rx", (-y * 5).toFixed(2) + "deg");
+  /* ---- sýnidæmi: hvert skref velur myndina á skjánum ----
+     Fyllingin í virka skrefinu er tímamælirinn. Hún keyrir aðeins meðan
+     verkið er í sjónmáli og hættir alveg um leið og gesturinn velur sjálfur. */
+  document.querySelectorAll("[data-console]").forEach(function (con) {
+    var steps = con.querySelectorAll(".step");
+    var shots = con.querySelectorAll(".shot");
+    var view = con.querySelector(".stage-view");
+    var labelEl = con.querySelector(".stage [data-label]");
+    var idxEl = con.querySelector("[data-idx]");
+    var cur = 0;
+    var show = function (n) {
+      var next = (n + steps.length) % steps.length;
+      if (next === cur) return;
+      var prev = cur;
+      cur = next;
+      shots.forEach(function (s, i) {
+        s.classList.toggle("is-active", i === cur);
+        s.classList.toggle("is-prev", i === prev);
       });
-      shot.addEventListener("pointerleave", function () {
-        shot.classList.remove("is-tilting");
-        shot.style.setProperty("--ry", "0deg");
-        shot.style.setProperty("--rx", "0deg");
+      steps.forEach(function (s, i) {
+        s.classList.toggle("is-active", i === cur);
+        s.setAttribute("aria-pressed", i === cur ? "true" : "false");
+      });
+      if (labelEl) labelEl.textContent = steps[cur].dataset.label;
+      if (idxEl) idxEl.textContent = "0" + (cur + 1);
+      if (view && !reduced) {
+        view.classList.remove("is-scanning");
+        void view.offsetWidth;
+        view.classList.add("is-scanning");
+      }
+    };
+    steps.forEach(function (s, i) {
+      s.addEventListener("click", function () { con.classList.add("is-manual"); show(i); });
+      s.addEventListener("animationend", function (e) {
+        if (e.animationName === "stepFill") show(cur + 1);
       });
     });
-  }
+    if (!reduced && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        con.classList.toggle("is-live", entries[0].isIntersecting);
+      }, { threshold: 0.35 }).observe(con);
+    }
+  });
 
   /* ---- punktanetið í hero ----
      Kyrrt net af punktum. Bylgjur ferðast yfir það með reglulegu millibili,
